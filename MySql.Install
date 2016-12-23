@@ -76,7 +76,7 @@ grant all privileges on  test.*  to easy@SHA1000046667  identified by "easy";
 flush privileges;
 
 
-12，重启mysql 服务。mysql stop/start
+12，重启mysql 服务。/etc/init.d/mysql stop/start
 /etc/inint.d/mysql start/stop
 一、启动方式
 1、使用 service 启动：service mysqld start
