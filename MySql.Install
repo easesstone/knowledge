@@ -70,6 +70,7 @@ insert into user(Host,User,Password) values("SHA1000046667","easy",password("eas
 10,用户删除，delete from user where user="easy" and host="SHA1000046667"
 
 11, 为用户授权。test 是数据库，
+GRANT ALL PRIVILEGES ON *.* TO root@"%" IDENTIFIED BY "root";
 grant all privileges on  test.*  to easy@SHA1000046667  identified by "easy";
 刷新系统权限表：SHA1000046667 这的是可以链接到服务器的机器ip. 
 flush privileges;
