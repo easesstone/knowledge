@@ -89,3 +89,7 @@ flush privileges;
 三、重启
 1、使用 service 启动：service mysqld restart
 2、使用 mysqld 脚本启动：/etc/inint.d/mysqld restart
+
+
+
+13，netstat -ntpl ；查看，mysql 所占用的端口。
