@@ -88,11 +88,11 @@ flush privileges;
 3、mysqladmin shutdown
 三、重启
 1、使用 service 启动：service mysqld restart
-2、使用 mysqld 脚本启动：/etc/inint.d/mysqld restart
-
-
-
+2、使用 mysqld 脚本启动：/etc/inint.d/mysqld restart 四，启动过程中，出现如下错误：
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)
+则用 service mysql start 
 13，netstat -ntpl ；查看，mysql 所占用的端口。
+
 
 
 
