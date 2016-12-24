@@ -100,3 +100,6 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib
 
 
 15 ，卸载  rpm -qa|grep -i mysql  ，rpm -e *****.
+
+
+16,利用 lsof  -i:3306 监听3306 端口绑定的程序。
