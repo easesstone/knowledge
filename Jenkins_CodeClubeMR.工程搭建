@@ -26,3 +26,6 @@ gitlabActionType : Merge
 最后，勾选Build when a change is pushed to GitLab. GitLab CI Service URL: http://10.18.219.241:8080/jenkins/project/DataSight-V1R2C10-Spark-streaming-MR，除了Build on Push Events 这个选项，其他都可以勾选。
 对于子工程的配置，可以配置为并行的形式， 也可以配置为串行的形式。串行的形式，有两种形式，一个是利用MutiJob 的插件，另一种，则是利用，Trigger plugin，把这个工程完成后，在工程构建完成后操作中选：选择Trigger paremeterized build on other job.
 子工程的配置，参见第一步。
+
+
+(非MR 的git 工程，高级的name 不用设置。)
