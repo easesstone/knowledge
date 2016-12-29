@@ -79,6 +79,17 @@ Hadoop的配置文件是 xml 格式，每个配置以声明 property 的 name �
 配置完成后，执行 NameNode 的格式化:
 成功的话，会看到 "successfully formatted" 和 "Exitting with status 0" 的提示，若为 "Exitting with status 1" 则是出错
 ./bin/hdfs namenode -format
+重跑这个命令时会提示输入Y
+Re-format filesystem in Storage Directory /home/datasight/hadoop-2.7.2/tmp/dfs/name ? (Y or N) Y
+16/12/29 07:38:38 INFO namenode.FSImage: Allocated new BlockPoolId: BP-1748782028-192.168.74.131-1483025918286
+16/12/29 07:38:38 INFO common.Storage: Storage directory /home/datasight/hadoop-2.7.2/tmp/dfs/name has been successfully formatted.
+16/12/29 07:38:39 INFO namenode.NNStorageRetentionManager: Going to retain 1 images with txid >= 0
+16/12/29 07:38:39 INFO util.ExitUtil: Exiting with status 0
+16/12/29 07:38:39 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at master/192.168.74.131
+************************************************************/
+
 
 
 接着开启 NaneNode 和 DataNode 守护进程：
