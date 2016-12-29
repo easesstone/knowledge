@@ -1,14 +1,16 @@
-Hadoop集群安装步骤  原创
+## Hadoop集群安装步骤  原创
 
-1.   Hadoop集群安装
+### 1.   Hadoop集群安装
 
-1.1             环境说明
+#### 1.1             环境说明
+```
 集群：三台Linux机器（SUSE）；
 JDK1.8（提前下载好对应的tar.gz）
 Hadoop2.7.2（提前下载好对应的tar.gz）
- 
 以下所有配置需要在每个主机上进行，但按照本文配置，可配置一个以后复制过去，完全相同，不用修改。
-1.2             同步时间
+```
+#### 1.2             同步时间
+```
 集群上的机器需要进行时间同步，不然运行MR任务时会报错。一般集群机器不能联网，手动修改每台机器时间。
 查看本机时间和时区：date
 设置时区：
@@ -17,14 +19,18 @@ Hadoop2.7.2（提前下载好对应的tar.gz）
 修改日期：date –s 15/07/2015
 修改时间：date –s 16:18:52
 写入硬盘时间（hwclock -w）
-1.3             关闭防火墙
+```
+#### 1.3             关闭防火墙
+```
 如果机器上正在运行防火墙，需要把它关上。
 停止防火墙：service iptables stop
 启动防火墙：service iptables start
 但以上命令只会当次机器运行有效，机器重启又会无效，如需要，可以如下：
 chkconfig iptables on
 chkconfig iptables off
-1.4             配置Hosts文件
+```
+#### 1.4             配置Hosts文件
+```
 首先，你要先给你的所有机器分配好IP和hostname，hadoop会根据主机名去/etc/hosts文件中查找对应的ip。
 查看/修改当前机器的主机名
 cat/vim /etc/HOSTNAME
@@ -34,7 +40,9 @@ cat/vim /etc/HOSTNAME
 {ip1} m1
 {ip2} m2
 {ip3} m3
-1.5             配置SSH互信
+```
+#### 1.5             配置SSH互信
+```
 为了使集群之间无密码访问（为了以后集群通信时不用每次都输入密码），需要在机器之间配置互信（只要确保能从master无密码访问slave就好了）。
 配置互信前请确保已经安装并启动了ssh服务。
 生成密钥并配置ssh无密码登录主机(master主机)
@@ -45,7 +53,9 @@ scp authorized_keys m2:~/.ssh
 scp authorized_keys m3:~/.ssh
 验证是否可以从master无密码登录slave主机
 ssh m2（在master主机输入）登录成功则配置成功，exit退出登录返回Master
-1.6             安装JDK和Hadoop
+```
+#### 1.6             安装JDK和Hadoop
+```
 Hadoop是用java开发的，Hadoop的编译和MR的运行都需要使用JDK，所以JDK是必须安装的。
 在安装目录下（如/usr/java）解压JDK（解压后可删除tar.gz以节省空间）
 tar -zxvf java.tar.gz
@@ -63,8 +73,9 @@ source /etc/profile
 java -version
 验证HADOOP是否成功
 hadoop version
- 
-1.7             修改Hadoop配置文件
+ ```
+#### 1.7             修改Hadoop配置文件
+```
 配置文件都在${HADOOP_HOME}/etc/hadoop目录下。
 修改slave文件
 vim slave，写入ip或hostname
@@ -75,14 +86,14 @@ m3
 该文件中有如下配置:export JAVA_HOME=${JAVA_HOME}，有时${JAVA_HOME}并不能生效，可选择性修改为对应的目录。
 修改core-site.xml
 <configuration>
-<property>
-<name>fs.default.name</name>
-<value>hdfs://m1:9000</value>
-</property>
-<property>
-<name>hadoop.tmp.dir</name>
-<value>/mnt/tmp</value>
-</property>
+    <property>
+        <name>fs.default.name</name>
+        <value>hdfs://m1:9000</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/mnt/tmp</value>
+    </property>
 </configuration>
 注释：
 1.  fs.default.name：文件系统所在主机及端口号，Deprecated，use {fs.defaultFS} instead，当前配置依然生效，向前兼容；
@@ -91,18 +102,18 @@ a)  如果hdfs-site.xml中不配置fs.name.dir和dfs.data.dir，则namenode和da
 b)  如果mapred-site.xml不配置mapred.local.dir。map task中间结果写本地磁盘的路径默认值为${hadoop.tmp.dir}/mapred/local。可配置多块磁盘环节写压力。当存在多个时，hadoop采用轮询的方式将不同的map task中间结果写到磁盘。
 修改hdfs-site.xml
 <configuration>
-<property>
-<name>dfs.name.dir</name>
-<value>/usr/local/hadoop/name</value>
-</property>
-<property>
-<name>dfs.data.dir</name>
-<value>/mnt/m1/data,/mnt/m2/data,/mnt/m3/data</value>
-</property>
-<property>
-<name>dfs.replication</name>
-<value>3</value>
-</property>
+    <property>
+        <name>dfs.name.dir</name>
+        <value>/usr/local/hadoop/name</value>
+    </property>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>/mnt/m1/data,/mnt/m2/data,/mnt/m3/data</value>
+    </property>
+    <property>
+         <name>dfs.replication</name>
+         <value>3</value>
+    </property>
 </configuration>
 注释：
 1.  dfs.name.dir：这是NameNode节点存储hadoop文件系统信息(fsimage)的本地路径，可以配置多个路径，但这些目录汇总的文件是一样的（防止某个磁盘挂掉，做备份）；Deprecated，use {dfs.namenode.name.dir} instead，当前配置依然生效，向前兼容；
@@ -111,24 +122,24 @@ b)  如果mapred-site.xml不配置mapred.local.dir。map task中间结果写本�
 修改mapred-site.xml
 将mapred-site.xml.template重命名为mapred-site.xml，然后修改。
 <configuration>
-<property>
-<name>mapreduce.framework.name</name>
-<value>yarn</value>
-</property>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
  
-<!--默认值，不用配，为了说明用途-->
-<property>
-<name>mapreduce.jobhistory.address</name>
-<value>0.0.0.0:10020</value>
-</property>
-<property>
-<name>mapreduce.jobhistory.webapp.address</name>
-<value>0.0.0.0:19888</value>
-</property>
-<property>
-<name>mapreduce.jobhistory.admin.address</name>
-<value>0.0.0.0:10033</value>
-</property>
+    <!--默认值，不用配，为了说明用途-->
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>0.0.0.0:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.webapp.address</name>
+        <value>0.0.0.0:19888</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.admin.address</name>
+        <value>0.0.0.0:10033</value>
+    </property>
 </configuration>
 注释：
 1.  mapreduce.framework.name：指使用哪种框架来运行任务，三个选项：classic，yarn，local，默认为local；classic：任务提交给JobTracker，它的地址通过{mapreduce.jobtracker.address}配置；yarn：任务提交给RM中的applications manager，它的地址通过{yarn.resourcemanager.address}配置(在yarn-site.xml中)。local：任务提交给本地JobTracker，即在本地使用MR，把{mapreduce.framework.name}和{mapreduce.jobtracker.address}都配置为local即可；
@@ -138,44 +149,44 @@ b)  mapreduce.jobhistory.admin.address：对外暴露的执行管理员命令的
 c)   mapreduce.jobhistory.address：JobHistory服务负责从HDFS上读取MR历史作业日志，然后解析成格式化信息，供UI查看，该项即该服务对UI服务进程暴露的IPC接口，默认{0.0.0.0:10020}；
 修改yarn-site.xml
 <configuration>
-<property>
-<name>yarn.nodemanager.aux-services</name>
-<value>mapreduce_shuffle</value>
-</property>
-<property>
-<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-<value>org.apache.hadoop.mapred.ShuffleHandler</value>
-</property>
-<property>
-<name>yarn.nodemanager.address</name>
-<value>${yarn.nodemanager.hostname}:8041</value>
-</property>
-<property>
-<name>yarn.resourcemanager.hostname</name>
-<value>m1</value>
-</property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.address</name>
+        <value>${yarn.nodemanager.hostname}:8041</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>m1</value>
+    </property>
  
-<!--有了yarn.resourcemanager.hostname配置后，以下可不用配置-->
-<property>
-<name>yarn.resourcemanager.scheduler.address</name>
-<value>m1:8030</value>
-</property>
-<property>
-<name>yarn.resourcemanager.resource-tracker.address</name>
-<value>m1:8031</value>
-</property>
-<property>
-<name>yarn.resourcemanager.address</name>
-<value>m1:8032</value>
-</property>
-<property>
-<name>yarn.resourcemanager.admin.address</name>
-<value>m1:8033</value>
-</property>
-<property>
-<name>yarn.resourcemanager.webapp.address</name>
-<value>m1:8088</value>
-</property>
+    <!--有了yarn.resourcemanager.hostname配置后，以下可不用配置-->
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>m1:8030</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.resource-tracker.address</name>
+        <value>m1:8031</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>m1:8032</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.admin.address</name>
+        <value>m1:8033</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.webapp.address</name>
+        <value>m1:8088</value>
+    </property>
 </configuration>
 注释：
 1.  yarn.nodemanager.aux-services：NM上运行的附属服务。需配置成mapreduce_shuffle才能运行MR程序；
@@ -204,7 +215,9 @@ DataNode
 NodeManager
 DataNode
 或者查看相应的UI界面，RM：http://${master节点IP}:8088，NM：http://${NM节点IP}:50070
-1.8             FAQ
+```
+#### 1.8             FAQ
+```
 1.  通过sh start-all.sh启动hadoop后，通过jps没有发现NodeManager进程，通过web访问m1:8042也不能正常显示。
 a)  问题解决：通过查看nodemanager启动日志发现有异常：cannot support recovery with an ephemeral server port. Check the setting of yarn.nodemanager.address。由于我并没有在yarn-site.xml中配置该项，所以通过查看官网提供的默认配置发现，{yarn.nodemanager.address}的默认配置是${yarn.nodemanager.hostname}:0。（网上很多资料记载的默认配置端口是8041，不知道为什么默认配置变成了0），经过配置该项为m1:8041后，再次启动，发现只有m1节点NM启动成功，其他节点依然失败，再次查看日志发现"Problem binding to m1:8041"，因为NM是运行在各个节点上的，所以该项配置应该对应各个节点各自的IP，所以应该配置成${yarn.nodemanager.hostname}:8041，问题解决。（需要注意修改所有节点的配置）。
 2.  按照老版本的配置文件，在core-site.xml中配置了hadoop.tmp.dir项为/mnt/m1/tmp,/mnt/m2/tmp,/mnt/m3/tmp，本意是逗号做分隔，配置三个目录，但实际上逗号并没有起到分隔的作用，而是被作为目录的一部分，只有一个目录被创建（并没有影响正常运行）；
@@ -214,3 +227,4 @@ a)  问题解决：
 3)  将该项配置成正常的单路径（不再以file://的形式配多路径），/mnt/tmp，问题解决（同时注意修改其他节点的配置）；
 3.  在已经成功启动过的前提下，修改了配置文件，然后复制到其他节点上了，再次启动时可能DataNode会失败，查看日志发现异常"java.io.Exception：All specified directories are failed to load"；
 a)  问题解决：这个是因为namenode的clusterID和datanode的clusterID不同造成的，简单的解决办法是删掉所有hdfs文件，即core-site.xml和hdfs-site.xml中配置的路径，然后重新格式化namenode，再启动就好了。
+```
