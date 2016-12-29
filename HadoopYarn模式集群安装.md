@@ -19,6 +19,8 @@ Hadoop2.7.2（提前下载好对应的tar.gz）
 修改日期：date –s 15/07/2015
 修改时间：date –s 16:18:52
 写入硬盘时间（hwclock -w）
+查看时区
+cat /etc/sysconfig/clock
 ```
 #### 1.3             关闭防火墙
 ```
