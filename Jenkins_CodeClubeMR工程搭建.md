@@ -1,7 +1,11 @@
-前提条件：1，需要git client plugin ,git plugin, gitlab plugin.
+## 前提条件：
+```
+1，需要git client plugin ,git plugin, gitlab plugin.
 关于MergeRequest 工程。有两种形式的MegeRequest
+```
 
-第一种：单个工程形式的。配置的方法如下：
+### 第一种：单个工程形式的。配置的方法如下：
+```
 I，git 配置中配置主库的地址。且高级设置中Name填origin, 私库中，Repository URL	 填的是：${gitlabSourceRepoURL},高级设置中，Name填的是：${gitlabSourceRepoName}，而branches to build 填的是：${gitlabSourceRepoName}/${gitlabSourceBranch}，
 II，勾选Build when a change is pushed to GitLab. GitLab CI Service URL: http://10.18.219.241:8080/jenkins/project/DataSight-V1R2C10-Spark-streaming-MR，除了Build on Push Events 这个选项，其他都可以勾选。 
 III，在shell 脚本中合并主库和私库的代码：
@@ -12,8 +16,9 @@ git checkout -b $gitlabSourceRepoName  FETCH_HEAD
 git checkout origin/$gitlabTargetBranch
 git merge --no-ff $gitlabSourceRepoName
 如果不这样做，可以通过另外一种方法，在第二步的后面增加Merge Before build 的选项，其中，Name  of repository 填的是origin  ，branch to merge to 填的是：${gitlabTargetBranch}  Merge Strategy 填的是：default , 其他的可能还有，Fast-forward mode  ： 这个选 -ff 就好。
-
-第二种，多个工程的形式。
+```
+### 第二种，多个工程的形式。
+```
 首先，配置一个总工程的入口，如MergeRequest 入口：
 里面的配置如,可以加入参数化构建过程：这个可以加，也可以不加。
 加的话主要有以下几个String parameter 类型的参数，
@@ -29,3 +34,4 @@ gitlabActionType : Merge
 
 
 (非MR 的git 工程，高级的name 不用设置。)
+```
