@@ -21,6 +21,14 @@ Hadoop2.7.2（提前下载好对应的tar.gz）
 写入硬盘时间（hwclock -w）
 查看时区
 cat /etc/sysconfig/clock
+一些参考：
+1.以root身份登录，通过执行`date`来检查您的机器当前正在使用的时区。你会看到像“Mon 17 Jan 2005 12:15:08 PM PST -0.461203秒”的东西，在这种情况下，PST是当前的时区。
+2.将目录切换到/ usr / share / zoneinfo，在这里您可以找到时区区域的列表。选择最适当的地区，如果你住在加拿大或美国这个目录是“美洲”目录。
+3.如果需要，请将以前的时区配置复制到其他位置。如`mv / etc / localtime / etc / localtime-old`。
+4.创建从适当时区到/ etc / localtime的符号链接。示例：`ln -s / usr / share / zoneinfo / Europe / Amsterdam / etc / localtime`。
+5.如果有实用程序rdate，请通过执行`/ usr / bin / rdate -s time.nist.gov`来更新当前系统时间。 （这一步可以跳过！）
+6.在文件/ etc / sysconfig / clock文件中设置ZONE条目（例如“America / Los_Angeles”）
+7.通过执行以下命令来设置硬件时钟：`/ sbin / hwclock --systohc`
 ```
 #### 1.3             关闭防火墙
 ```
