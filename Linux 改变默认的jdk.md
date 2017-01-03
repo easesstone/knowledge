@@ -1,5 +1,6 @@
 ### 命令update-alternatives
 ```
+作用：当一个系统中有多个版本的的同一个软件，比如系统安装了多个jdk ，则，可以用update-alternative 进行解决。
 [root@SHA1000031310 ~]# update-alternatives  --help
 alternatives version 1.3.49.3 - Copyright (C) 2001 Red Hat, Inc.
 This may be freely redistributed under the terms of the GNU Public License.
