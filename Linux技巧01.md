@@ -43,3 +43,5 @@
 ### 13） 检查目录下文件个数
     find /export2/BigData/datanode/dn1 -type f | wc -l
     
+### 14) 解压jar 包
+    例如：unzip zk-helper-1.0.jar  -d hello
