@@ -1,3 +1,4 @@
+```
 pom文件添加单元测试依赖：
 
 [html] view plain copy 在CODE上查看代码片派生到我的代码片
@@ -27,3 +28,4 @@ pom文件添加单元测试依赖：
 4 命令行调用单元测试方法：
 
 mvn test -Dtest=TestClassName#testMethod 
+```
