@@ -1,6 +1,6 @@
 ### 1)Client does not have permissions to send as this sender
 ```
-原因：管理员邮箱中少配置了lidiliang@huawei.com
+原因：管理员邮箱中少配置了***@huawei.com(必须是可用的邮箱。)
 Failed to send out e-mail
 com.sun.mail.smtp.SMTPSendFailedException: 550 5.7.1 Client does not have permissions to send as this sender
 at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2057)
@@ -102,7 +102,7 @@ Use SMTP Authentication	Help for feature: Use SMTP Authentication
  	Default Content Type		HTML(text/html)
 Use List-ID Email Header	
 Add 'Precedence: bulk' Email Header	
- 	Default Recipients		lwx355499
+ 	Default Recipients		********
  	Reply To List		
  	Emergency reroute		
  	Excluded Recipients		
@@ -132,3 +132,4 @@ Enable watching for jobs	Help for feature: Enable watching for jobs
 Default Triggers...
  	Content Token Reference	
 ```
+### 4) 具体工程中，只需要配置收件人的地址，类似：***@notesmail.huawei.com
