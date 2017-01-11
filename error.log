@@ -1,0 +1,10 @@
+```
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) 
+on project zk-helper: Execution default-test of goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test failed: 
+The forked VM terminated without properly saying goodbye. VM crash or System.exit called?
+[ERROR] Command was cmd.exe /X /C ""C:\Program Files\Java\JDK1.7.0_60\jre\bin\java" 
+-jar D:\code\Hive_ODBC\zkcode\target\surefire\surefirebooter8035385191175289231.jar
+D:\code\Hive_ODBC\zkcode\target\surefire\surefire6459104780331452738tmp 
+D:\code\Hive_ODBC\zkcode\target\surefire\surefire_05202842494619497778tmp"
+
+```
