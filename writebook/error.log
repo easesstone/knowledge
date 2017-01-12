@@ -8,3 +8,7 @@ D:\code\Hive_ODBC\zkcode\target\surefire\surefire6459104780331452738tmp
 D:\code\Hive_ODBC\zkcode\target\surefire\surefire_05202842494619497778tmp"
 
 ```
+
+* 2.12 - The forked VM terminated without saying properly goodbye. VM crash or System.exit called ? http://jira.codehaus.org/browse/SUREFIRE-827
+* 2.12.1 - Unable to locate surefire-booter in the list of plugin artifacts https://jira.codehaus.org/browse/SUREFIRE-896
+* 2.12.2 - has a bug when no tests are there in a module it will look for failsafe-summary.xml and fail http://jira.codehaus.org/browse/SUREFIRE-901
