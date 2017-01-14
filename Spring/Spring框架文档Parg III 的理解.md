@@ -7,6 +7,7 @@
 * AOP 的APIS
 
 ### IoC 容器。
+#### 对IoC和bean 的理解
 * IoC 反转控制，也叫作依赖注入。
   总的来说，也就是说，把一个对象对其他对象的依赖进行统一的管理。 把一个对象的new过程，实例化过程，用一个容器来统一管理。
   你需要的时候，直接从容器里面来读取，而不必再实例化一遍，而且，在我个人的理解，用容器进行管理对象的实例化过程，你需要的
@@ -16,7 +17,9 @@
 * Ioc 容器，主要的两个包是org.springframework.beans 和 org.springframework.context。
   其中最自出的接口是BeanFactory，它提供一种先进的机制来管理任何类型的对象。它是整个Spring框架的一个基础接口。
   而ApplicationContext是继承于BeanFactory的一个子接口，它提供比BeanFactory更加丰富的特性和功能，是Spring 中一个十分
-  重要的一个接口。从根本上，可以说，其可以代表Spring的IoC容器。
+  重要的一个接口。从根本上，可以说，其可以代表Spring的IoC容器。
+  
+#### Container
 * ApplicationContext有两个实现类，ClassPathXmlApplicationContext or FileSystemXmlApplicationContext。
 * ApplicationContext，也就是说，IoC 容器，通过读取Configuration Metadata的配置，来知道该如何实例化，配置，组装你的应
   用程序的Object.
@@ -42,7 +45,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="..." class="...">
-    <!-- collaborators and configuration for this bean go here -->
+    <!-- 注意id 值唯一，class 的值是指全类名 -->
+    <!-- collaborators and configuration for this bean go here -->
     </bean>
     <bean id="..." class="...">
     <!-- collaborators and configuration for this bean go here -->
@@ -68,7 +72,8 @@
     <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">
       <property name="accountDao" ref="accountDao"/>
       <property name="itemDao" ref="itemDao"/>
-      <!-- additional collaborators and configuration for this bean go here -->
+      <!--通过ref 这种关系，来反应对象之间的联系和引用 -- >
+      <!-- additional collaborators and configuration for this bean go here -->
     </bean>
     <!-- more bean definitions for services go here -->
   </beans>
@@ -89,5 +94,19 @@
     <!-- additional collaborators and configuration for this bean go here -->
     </bean>
     <!-- more bean definitions for data access objects go here -->
+  </beans>
+  ```
+* 通常的做法，可以通过如下的方式，把多个xml 文件合并成为一个。从而加载的时候通过加载一个组合的xml来达到加载所有xml文件的
+  形式。
+  
+  ```xml
+  <beans>
+    <import resource="services.xml"/>
+    <import resource="resources/messageSource.xml"/>
+    <import resource="/resources/themeSource.xml"/>
+    <!-- 注意几个impore 的路径。 /resource/themeSource.xml 中的第一个斜杠会被忽略掉。不推荐使用相对路径，
+        存在重大的安全隐患-->
+    <bean id="bean1" class="..."/>
+    <bean id="bean2" class="..."/>
   </beans>
   ```
