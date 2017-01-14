@@ -182,3 +182,60 @@
     }
   }
   ```
+  
+* 通过实例工厂方法实例化Bean
+  与静态工厂方法的区别是，可以通过依赖注入，把实例工厂类，注入到IoC容器进行管理。
+
+
+  
+  ```xml
+  <!-- the factory bean, which contains a method called createInstance() -->
+  <bean id="serviceLocator" class="examples.DefaultServiceLocator">
+	<!-- inject any dependencies required by this locator bean -->
+  </bean>
+  <!-- the bean to be created via the factory bean -->
+  <bean id="clientService"
+	factory-bean="serviceLocator"
+	factory-method="createClientServiceInstance"/>
+  ```
+
+  ```java
+  public class DefaultServiceLocator {
+	  private static ClientService clientService = new ClientServiceImpl();
+	  private DefaultServiceLocator() {}
+	  public ClientService createClientServiceInstance() {
+		return clientService;
+    }
+  }
+  ```
+  
+  注：一个实例工厂方类，可以有多个方法来实例化对象:
+  类似如下：
+
+
+  ```xml
+  <bean id="serviceLocator" class="examples.DefaultServiceLocator">
+		<!-- inject any dependencies required by this locator bean -->
+  </bean>
+  <bean id="clientService"
+	factory-bean="serviceLocator"
+	factory-method="createClientServiceInstance"/>
+  <bean id="accountService"
+	factory-bean="serviceLocator"
+	factory-method="createAccountServiceInstance"/>
+  ```
+  
+
+  ```java
+  public class DefaultServiceLocator {
+	private static ClientService clientService = new ClientServiceImpl();
+	private static AccountService accountService = new AccountServiceImpl();
+	private DefaultServiceLocator() {}
+	public ClientService createClientServiceInstance() {
+		return clientService;
+	}
+	public AccountService createAccountServiceInstance() {
+		return accountService;
+	}
+  }
+  ```
