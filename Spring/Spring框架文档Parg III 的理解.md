@@ -146,3 +146,39 @@
   | lazy-initialization mode | the section called “Lazy-initialized beans” |
   | initialization method  | the section called “Initialization callbacks” |
   | destruction method | the section called “Destruction callbacks” |
+  
+* 别名的应用
+  例如，在多个子系统中，主系统与各个子系统使用不同的数据库时，可以使用别名进行配置。
+  配置如下，虽然他们是同一个bean，但是引用的不同，他们的数据就不一样。
+  注意名字的命名最好遵守java 的命名规则，即小写字母开头，之后是骆驼峰的形式。
+
+  ```xml
+    <alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
+    <alias name="subsystemA-dataSource" alias="myApp-dataSource" />
+  ```
+
+
+* 通过构造方法初始化
+
+  ```xml
+  <bean id="exampleBean" class="examples.ExampleBean"/>
+  <bean name="anotherExample" class="examples.ExampleBeanTwo"/>
+  ```
+
+* 通过静态工厂方法
+
+  ```xml
+  <bean id="clientService"
+    class="examples.ClientService"
+    factory-method="createInstance"/>
+  ```
+
+  ```java
+  public class ClientService {
+    private static ClientService clientService = new ClientService();
+    private ClientService() {}
+    public static ClientService createInstance() {
+      return clientService;
+    }
+  }
+  ```
