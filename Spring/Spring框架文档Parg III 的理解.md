@@ -1,4 +1,4 @@
-### 第三部分 核心技术
+## 第三部分 核心技术
 * IoC 容器
 * 资源
 * 验证器，数据绑定，类型转换
@@ -110,3 +110,39 @@
     <bean id="bean2" class="..."/>
   </beans>
   ```
+* Container 的使用
+
+  ```java
+  // create and configure beans
+  ApplicationContext context =
+      new ClassPathXmlApplicationContext(new String[] {"services.xml", "daos.xml"});
+  // retrieve configured instance
+  PetStoreService service = context.getBean("petStore", PetStoreService.class);
+  // use configured instance
+  List<String> userList = service.getUsernameList();
+  ```
+
+#### Bean 概览
+* bean 的配置，通常包含以下几点。
+ 
+ ```
+  1，专有名词，包限定类名，一个合法的类名：通常可以理解为全类名，即定义的bean 的具体实现类。
+  2，行为配置，包含生命周期，有效范围。
+  3，Bean 为了完成自身的功能对其他Bean 的依赖关系，被依赖的bean 成为协作这或者依赖关系。
+  4，Bean 属性的设置，默认属性的设置。
+  ```
+  
+  其常见的属性如下：
+
+  | Property |Explained in… |
+  | ------  |  ------ |
+  | id     | the identifiers |
+  | class | the section called “Instantiating beans” |
+  | name | the section called “Naming beans” |
+  | scope | Section 7.5, “Bean scopes” |
+  | constructor | arguments the section called “Dependency Injection” |
+  | properties | the section called “Dependency Injection” |
+  | autowiring  mode | the section called “Autowiring collaborators” |
+  | lazy-initialization mode | the section called “Lazy-initialized beans” |
+  | initialization method  | the section called “Initialization callbacks” |
+  | destruction method | the section called “Destruction callbacks” |
