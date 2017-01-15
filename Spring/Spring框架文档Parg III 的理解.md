@@ -448,7 +448,156 @@
 	}
   }
   ```
-	
+
+
+#### Bean依赖和详细配置
+* 1，p-namespace p命名空间的使用 <br/>
+  2，valus 标签的使用，一个很好的功能，<br/>
+  3，idref 标签 <br/>
+  4，ref标签 <br/>
+  5，parent 标签 <br />
+  6，内部bean,处于<properties>标签或者 <constructor-arg>中，<br/>
+  7，集合标签，包含<list/>, <set/>, <map/>, and <props/> <br/>
+     对应java 的List, Set, Map, and Propertie<br />
+  8，父与子Bean 集合或者属性的覆盖
+  
+
+  ```xml
+  <!--不用命名空间的情况下-->
+  <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!-- results in a setDriverClassName(String) call -->
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/mydb"/>
+	<property name="username" value="root"/>
+	<property name="password" value="masterkaoli"/>
+  </bean>
+  
+  <!-- 1，用命名空间 -->
+  <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close"
+		p:driverClassName="com.mysql.jdbc.Driver"
+		p:url="jdbc:mysql://localhost:3306/mydb"
+		p:username="root"
+		p:password="masterkaoli"/>
+  </beans>
+  
+  <!--,2，使用value 的例子 -->
+  <bean id="mappings"
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<!-- typed as a java.util.Properties -->
+	<property name="properties">
+		<value>
+			jdbc.driver.className=com.mysql.jdbc.Driver
+			jdbc.url=jdbc:mysql://localhost:3306/mydb
+		</value>
+	</property>
+  </bean>
+  
+  <!-- 3，idref 标签 推荐使用，可以有效的检测致命错误 -->
+  <bean id="theTargetBean" class="..."/>
+  <bean id="theClientBean" class="...">
+	<property name="targetName">
+		<idref bean="theTargetBean" />
+	</property>
+  </bean>
+  <!-- 与如下等同 -->
+  <bean id="theTargetBean" class="..." />
+  <bean id="client" class="...">
+	<property name="targetName" value="theTargetBean" />
+  </bean>
+  
+  <!-- 4,ref 标签 bean 的值是Container 中bean 的id 或者name -->
+  <ref bean="someBean"/>
+  
+  <!-- 5,parent 标签-->
+  <!-- in the parent context -->
+  <bean id="accountService" class="com.foo.SimpleAccountService">
+	<!-- insert dependencies as required as here -->
+  </bean>
+  <!-- in the child (descendant) context -->
+  <bean id="accountService" 
+    class="org.springframework.aop.framework.ProxyFactoryBean"><!-- bean name is the same as
+      the parent bean -->
+    <property name="target">
+      <ref parent="accountService"/> <!-- notice how we refer to the parent bean -->
+    </property>
+  <!-- insert other configuration and dependencies as required here -->
+  </bean>
+  
+  <!-- 6,内部bean -->
+  <bean id="outer" class="...">
+    <!-- instead of using a reference to a target bean, simply define the target bean inline -->
+	<property name="target">
+		<bean class="com.example.Person"> <!-- this is the inner bean -->
+			<property name="name" value="Fiona Apple"/>
+			<property name="age" value="25"/>
+		</bean>
+	</property>
+  </bean>
+  
+  <!-- 7,集合标签，
+	The value of a map key or value, or a set value, can also again be
+	any of the following elements:
+	bean | ref | idref | list | set | map | props | value | null -->
+  <bean id="moreComplexObject" class="example.ComplexObject">
+	<!-- results in a setAdminEmails(java.util.Properties) call -->
+	<property name="adminEmails">
+		<props>
+			<prop key="administrator">administrator@example.org</prop>
+			<prop key="support">support@example.org</prop>
+			<prop key="development">development@example.org</prop>
+		</props>
+	</property>
+	<!-- results in a setSomeList(java.util.List) call -->
+	<property name="someList">
+		<list>
+			<value>a list element followed by a reference</value>
+			<ref bean="myDataSource" />
+		</list>
+	</property>
+	<!-- results in a setSomeMap(java.util.Map) call -->
+	<property name="someMap">
+		<map>
+			<entry key="an entry" value="just some string"/>
+			<entry key ="a ref" value-ref="myDataSource"/>
+		</map>
+	</property>
+	<!-- results in a setSomeSet(java.util.Set) call -->
+	<property name="someSet">
+		<set>
+			<value>just some string</value>
+			<ref bean="myDataSource" />
+		</set>
+	</property>
+  </bean>
+  
+  <!-- 8，父与子bean 中的集合覆盖如下 -->
+  <beans>
+	<bean id="parent" abstract="true" class="example.ComplexObject">
+		<property name="adminEmails">
+			<props>
+				<prop key="administrator">administrator@example.com</prop>
+				<prop key="support">support@example.com</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="child" parent="parent">
+		<property name="adminEmails">
+			<!-- the merge is specified on the child collection definition -->
+			<props merge="true">
+				<prop key="sales">sales@example.com</prop>
+				<prop key="support">support@example.co.uk</prop>
+			</props>
+		</property>
+	</bean>
+  <beans>
+  ```
+  
  
   
   
