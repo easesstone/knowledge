@@ -415,6 +415,39 @@
 	}
   }
   ```
+  
+
+* 使用静态工厂方法实例化一个bean
+
+  ```xml
+  <bean id="exampleBean" class="examples.ExampleBean" factory-method="createInstance">
+    <constructor-arg ref="anotherExampleBean"/>
+	<constructor-arg ref="yetAnotherBean"/>
+	<constructor-arg value="1"/>
+  </bean>
+  <bean id="anotherExampleBean" class="examples.AnotherBean"/>
+  <bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+  ```
+
+
+
+  ```java
+  public class ExampleBean {
+	// a private constructor
+	private ExampleBean(...) {
+		...
+	}
+	// a static factory method; the arguments to this method can be
+	// considered the dependencies of the bean that is returned,
+	// regardless of how those arguments are actually used.
+	public static ExampleBean createInstance (
+	AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+		ExampleBean eb = new ExampleBean (...);
+		// some other operations...
+		return eb;
+	}
+  }
+  ```
 	
  
   
