@@ -239,3 +239,180 @@
 	}
   }
   ```
+  
+* 依赖注入的两种表现形式<br />
+  1，基于构造函数的依赖注入<br />
+  2，基于setter 设置属性值的方式进行依赖注入<br />
+  
+  
+* 基于构造函数的依赖注入。
+  形如下面的Class，只可以用构造函数的依赖注入。
+
+  
+  ```java
+  public class SimpleMovieLister {
+    // the SimpleMovieLister has a dependency on a MovieFinder
+    private MovieFinder movieFinder;
+    // a constructor so that the Spring container can inject a MovieFinder
+    public SimpleMovieLister(MovieFinder movieFinder) {
+      this.movieFinder = movieFinder;
+    }
+    // business logic that actually uses the injected MovieFinder is omitted...
+  }
+  ```
+
+* 对于构造函数参数的指定，一般情况下必须指定其类型，或者在构造参数中的位置。<br />
+  如下是不用指定特定的的类型与参数的位置：<br />
+
+  ```java 
+  package x.y;
+    public class Foo {
+    public Foo(Bar bar, Baz baz) {
+      // ...
+    }
+  }
+  ```
+
+  ```xml
+  <beans>
+    <bean id="foo" class="x.y.Foo">
+      <constructor-arg ref="bar"/>
+      <constructor-arg ref="baz"/>
+    </bean>
+     <bean id="bar" class="x.y.Bar"/>
+    <bean id="baz" class="x.y.Baz"/>
+  </beans>
+  ```
+  
+* 必须指定参数的情况，一种，用类型指定，一种用其在构造参数中的位置来指定，以及参数的名字来指定。<br/>
+  形如如下：你可以同时指定 type 与index 或者name ,注意index 是从0开始的。<br/>
+	请注意，在setter方法上使用@Required注释可以使属性成为必需的依赖关系。<br/>
+
+  ```java
+  package examples;
+    public class ExampleBean {
+    // Number of years to calculate the Ultimate Answer
+    private int years;
+    // The Answer to Life, the Universe, and Everything
+    private String ultimateAnswer;
+    public ExampleBean(int years, String ultimateAnswer) {
+      this.years = years;
+      this.ultimateAnswer = ultimateAnswer;
+    }
+  }
+  ```
+
+  ```xml
+  <!-- 如下按照参数类型来指定。-->
+	<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg type="int" value="7500000"/>
+     <constructor-arg type="java.lang.String" value="42"/>
+  </bean>
+  <!--或者形如如下，按照参数的位置来指定 -->
+  <bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg index="0" value="7500000"/>
+    <constructor-arg index="1" value="42"/>
+  </bean>
+	<!--如下，按照名字来指定 -->
+  <bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg name="years" value="7500000"/>
+    <constructor-arg name="ultimateAnswer" value="42"/>
+  </bean>
+  ```
+	
+* 注意形如如下的 @ConstructorProperties 的使用，
+
+	```java
+	//An annotation on a constructor that shows how the parameters 
+	//of that constructor correspond to the constructed object's getter methods. For example:
+	//The annotation shows that the first parameter of the constructor can be retrieved with 
+	//the getX() method and the second with the getY() method. Since parameter names are not 
+	//in general available at runtime, without the annotation there would be no way to know 
+	//whether the parameters correspond to getX() and getY() or the other way around.
+  public class Point {
+     @ConstructorProperties({"x", "y"})
+     public Point(int x, int y) {
+         this.x = x;
+         this.y = y;
+     }
+     public int getX() {
+         return x;
+     }
+     public int getY() {
+         return y;
+     }
+     private final int x, y;
+ }
+ ```
+
+* Bean 的解析的过程，<br/>
+  1，ApplicationContext根据Configuration metadata 配置元数据（可以来自xml ，anotation，或者java 代码），<br/>
+	2，当一个Bean 被使用时，它的参数和属性等依赖关系，通过属性设置，构造参数设置，静态工厂方法设置，<br/>
+	3，注意不要使用循环应用的Bean 形式，即A依赖B的实例，B依赖A的实例， 虽然这种情况下可以用setter 形式的依赖注入解决。<br/>	
+ 
+	
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
