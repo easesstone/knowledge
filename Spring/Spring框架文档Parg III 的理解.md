@@ -598,6 +598,32 @@
   <beans>
   ```
   
+* 强类型转换
+  
+
+  ```java
+  public class Foo {
+    private Map<String, Float> accounts;
+	public void setAccounts(Map<String, Float> accounts) {
+		this.accounts = accounts;
+	}
+  }
+  ```
+
+  ```xml
+  <beans>
+    <bean id="foo" class="x.y.Foo">
+		<property name="accounts">
+			<map>
+				<entry key="one" value="9.99"/>
+				<entry key="two" value="2.75"/>
+				<entry key="six" value="3.99"/>
+			</map>
+		</property>
+	</bean>
+  </beans>
+  ```
+  
  
   
   
