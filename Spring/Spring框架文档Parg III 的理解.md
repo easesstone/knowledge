@@ -151,15 +151,16 @@
   例如，在多个子系统中，主系统与各个子系统使用不同的数据库时，可以使用别名进行配置。
   配置如下，虽然他们是同一个bean，但是引用的不同，他们的数据就不一样。
   注意名字的命名最好遵守java 的命名规则，即小写字母开头，之后是骆驼峰的形式。
+  
+  ```xml
+  <alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
+  <alias name="subsystemA-dataSource" alias="myApp-dataSource" />
+  ```
 
-  ```xml
-    <alias name="subsystemA-dataSource" alias="subsystemB-dataSource"/>
-    <alias name="subsystemA-dataSource" alias="myApp-dataSource" />
-  ```
-
-
+  
 * 通过构造方法初始化
 
+  
   ```xml
   <bean id="exampleBean" class="examples.ExampleBean"/>
   <bean name="anotherExample" class="examples.ExampleBeanTwo"/>
@@ -347,9 +348,73 @@
 
 * Bean 的解析的过程，<br/>
   1，ApplicationContext根据Configuration metadata 配置元数据（可以来自xml ，anotation，或者java 代码），<br/>
-	2，当一个Bean 被使用时，它的参数和属性等依赖关系，通过属性设置，构造参数设置，静态工厂方法设置，<br/>
-	3，注意不要使用循环应用的Bean 形式，即A依赖B的实例，B依赖A的实例， 虽然这种情况下可以用setter 形式的依赖注入解决。<br/>	
- 
+  2，当一个Bean 被使用时，它的参数和属性等依赖关系，通过属性设置，构造参数设置，静态工厂方法设置，<br/>
+  3，注意不要使用循环应用的Bean 形式，即A依赖B的实例，B依赖A的实例， 虽然这种情况下可以用setter 形式的依赖注入解决。<br/>
+  
+* Bean 基于Setter 方式的xml注例子：
+
+  ```xml
+  <bean id="exampleBean" class="examples.ExampleBean">
+    <!-- setter injection using the nested ref element -->
+    <property name="beanOne">
+      <ref bean="anotherExampleBean"/>
+    </property>
+    <!-- setter injection using the neater ref attribute -->
+    <property name="beanTwo" ref="yetAnotherBean"/>
+    <property name="integerProperty" value="1"/>
+  </bean>
+  <bean id="anotherExampleBean" class="examples.AnotherBean"/>
+  <bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+  ```
+  
+  ```java
+  public class ExampleBean {
+    private AnotherBean beanOne;
+    private YetAnotherBean beanTwo;
+    private int i;
+    public void setBeanOne(AnotherBean beanOne) {
+      this.beanOne = beanOne;
+    }
+    public void setBeanTwo(YetAnotherBean beanTwo) {
+      this.beanTwo = beanTwo;
+    }
+    public void setIntegerProperty(int i) {
+      this.i = i;
+    }
+  }
+  ```
+  
+
+
+*  Bean 基于构造函数依赖注入的例子。
+
+  ```xml
+  <bean id="exampleBean" class="examples.ExampleBean">
+    <!-- constructor injection using the nested ref element -->
+    <constructor-arg>
+		<ref bean="anotherExampleBean"/>
+		</constructor-arg>
+		<!-- constructor injection using the neater ref attribute -->
+		<constructor-arg ref="yetAnotherBean"/>
+		<constructor-arg type="int" value="1"/>
+  </bean>
+  <bean id="anotherExampleBean" class="examples.AnotherBean"/>
+  <bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+  ```
+
+
+  ```java
+  public class ExampleBean {
+	private AnotherBean beanOne;
+	private YetAnotherBean beanTwo;
+	private int i;
+	public ExampleBean(AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+		this.beanOne = anotherBean;
+		this.beanTwo = yetAnotherBean;
+		this.i = i;
+	}
+  }
+  ```
 	
  
   
