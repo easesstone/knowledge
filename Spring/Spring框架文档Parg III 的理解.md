@@ -624,6 +624,77 @@
   </beans>
   ```
   
+* Null和空字符串
+
+
+  ```
+  <bean class="ExampleBean">
+	<property name="email" value=""/>
+  </bean>
+  
+  <bean class="ExampleBean">
+    <property name="email">
+		<null/>
+    </property>
+  </bean>
+  ```  
+
+* p命名空间
+
+  ```xml
+  <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean name="john-classic" class="com.example.Person">
+		<property name="name" value="John Doe"/>
+		<property name="spouse" ref="jane"/>
+	</bean>
+	<bean name="john-modern"
+		class="com.example.Person"
+		p:name="John Doe"
+		p:spouse-ref="jane"/>
+	<!-- spouse 指的是属性名 -->
+	<bean name="jane" class="com.example.Person">
+		<property name="name" value="Jane Doe"/>
+	</bean>
+  </beans>
+  ```
+  
+* C命名空间 constructor-arg
+
+
+  ```xml
+  <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="bar" class="x.y.Bar"/>
+	<bean id="baz" class="x.y.Baz"/>
+	<!-- traditional declaration -->
+	<bean id="foo" class="x.y.Foo">
+		<constructor-arg ref="bar"/>
+		<constructor-arg ref="baz"/>
+		<constructor-arg value="foo@bar.com"/>
+	</bean>
+	<!-- c-namespace declaration -->
+	<bean id="foo" class="x.y.Foo" c:bar-ref="bar" c:baz-ref="baz" c:email="foo@bar.com"/>
+	<!-- c-namespace index declaration -->
+	<bean id="foo" class="x.y.Foo" c:_0-ref="bar" c:_1-ref="baz"/>
+  </beans>
+  ```
+  
+* 复合属性的使用，可能会发生空指针异常
+
+
+  ```xml
+  <bean id="foo" class="foo.Bar">
+	<property name="fred.bob.sammy" value="123" />
+  </bean>
+  ```
+  
  
   
   
