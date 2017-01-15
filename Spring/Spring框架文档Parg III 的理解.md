@@ -732,7 +732,8 @@
   
   关掉自动装载，在bean 的属性中autowire-candidate设置为false， 或者@Autowared=false
  
-  
+* 单例的类调用非单例的bean，在container 中的实现。
+  参考参考文档，此处忽略
   
   
   
