@@ -456,8 +456,8 @@
   3，idref 标签 <br/>
   4，ref标签 <br/>
   5，parent 标签 <br />
-  6，内部bean,处于<properties>标签或者 <constructor-arg>中，<br/>
-  7，集合标签，包含<list/>, <set/>, <map/>, and <props/> <br/>
+  6，内部bean,处于properties标签或者constructor-arg中，<br/>
+  7，集合标签，包含list, set, map, and props <br/>
      对应java 的List, Set, Map, and Propertie<br />
   8，父与子Bean 集合或者属性的覆盖
   
