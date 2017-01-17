@@ -15,17 +15,36 @@
 * 读写基本类型数据 (long, int etc.)
 * 读写对象
 
-## InputStream and OutputStream
-> 字节流从这两个抽象基类出发，生成其他一系列的子类，用于读写。
+关于字节流，主要的类如下。
 
-### InputStream
-> 根据输入的数据方式和输入格式以及方法的不同，InputStream派生出了多个子类。这些不同的读取方法大致如下：<br/>
-> 1，字节数组。 <br/>
-> 2，String 对象。<br/>
-> 3，文件。<br/>
-> 4，管道。<br/>
-> 5，流。<br/>
-> 6，标准输入输出，标准错误输出。<br/>
-> 7，其他，比如Internet,内存，扫描器等。<br/>
+| 属性 | 输入 | 输出 |
+| ------ | ------ | ------ |
+| Basic | InputStream | OutputStream |
+| Arrays | ByteArraysInputStream | ByteArraysInputStream |
+| File | FileInputStream,RandomAccessFile | FileOutputStream,RandomAccessFile |
+| Pines | PinedInputStream | PinedOutputStream |
+| Buffering | BufferedInputStream | BufferedOutputStream |
+| Fitering | FilterInputStream | FilterOutputStream|
+| Parsing | PushbackInputStream,StreamTokenizer| |
+| String |||
+| Data | DataInputStream | DataOutputStream |
+| Data-formatted || PrintStream|
+| Objects | ObjectInputStream | ObjectOutputStream |
+| Utilities | SequenceInputStream | |
 
+关于字节流，其主要的类如下：
 
+| 属性 | 输入 | 输出 |
+| ------ | ------ | ------ |
+| Basic | Reader,InputStreamReader | Writer,OutputStreamWriter |
+| Arrays | CharArraysInputStream | CharArraysInputStream |
+| File | FileReader | FileWriter |
+| Pines | PinedReader | PinedWriter |
+| Buffering | BufferedReader | BufferedWriter |
+| Fitering | FilterReader | FilterWriter|
+| Parsing | PushbackReader,LineNumberReader| |
+| String | StringReader | StringWriter |
+| Data |  |  |
+| Data-formatted || PrintWriter|
+| Objects |  |  |
+| Utilities |  | |
