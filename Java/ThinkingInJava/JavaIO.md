@@ -1,11 +1,31 @@
-# InputStream and OutputStream
-> java io 从这两个抽象基类出发，生成其他一系列的子类，用于读写。
+# 流的概念
+> java中程序对数据的处理，抽象成流，数据从一个地方流向另一个地方。我们可以往流中写入数据，也可以从流中获取数据。<br/>
+> 总的来看，java io 的类中，主要分为两种，一种是以字节为单位的流，一种是以字符为单位的流。<br/>
+> 即，Inpustream,OuputStream 以及Reader 和Writer。<br/>
 
-## InputStream
+* 对于java io 的用途，概括来看有如下：
+* 文件访问
+* 网络访问
+* 内存缓存访问
+* 线程内部通信(管道)
+* 缓冲
+* 过滤
+* 解析
+* 读写文本 (Readers / Writers)
+* 读写基本类型数据 (long, int etc.)
+* 读写对象
+
+## InputStream and OutputStream
+> 字节流从这两个抽象基类出发，生成其他一系列的子类，用于读写。
+
+### InputStream
 > 根据输入的数据方式和输入格式以及方法的不同，InputStream派生出了多个子类。这些不同的读取方法大致如下：<br/>
 > 1，字节数组。 <br/>
 > 2，String 对象。<br/>
 > 3，文件。<br/>
 > 4，管道。<br/>
 > 5，流。<br/>
-> 6，其他，比如Internet,扫描器等。<br/>
+> 6，标准输入输出，标准错误输出。<br/>
+> 7，其他，比如Internet,内存，扫描器等。<br/>
+
+
