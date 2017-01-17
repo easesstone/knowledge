@@ -3,7 +3,8 @@
 > 总的来看，java io 的类中，主要分为两种，一种是以字节为单位的流，一种是以字符为单位的流。<br/>
 > 即，Inpustream,OuputStream 以及Reader 和Writer。<br/>
 
-* 对于java io 的用途，概括来看有如下：
+ 对于java io 的用途，概括来看有如下：
+
 * 文件访问
 * 网络访问
 * 内存缓存访问
