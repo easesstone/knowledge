@@ -35,17 +35,17 @@
 
 关于字节流，其主要的类如下：
 
-| 属性 | 输入 | 输出 |
-| ------ | ------ | ------ |
-| Basic | Reader,InputStreamReader | Writer,OutputStreamWriter |
-| Arrays | CharArraysInputStream | CharArraysInputStream |
-| File | FileReader | FileWriter |
-| Pines | PinedReader | PinedWriter |
-| Buffering | BufferedReader | BufferedWriter |
-| Fitering | FilterReader | FilterWriter|
-| Parsing | PushbackReader,LineNumberReader| |
-| String | StringReader | StringWriter |
-| Data |  |  |
-| Data-formatted || PrintWriter|
-| Objects |  |  |
-| Utilities |  | |
+| 属性 | 输入 | 输出 | 说明 |
+| ------ | ------ | ------ | ------ |
+| Basic | Reader,InputStreamReader | Writer,OutputStreamWriter | InputStreamReader与Output
+| Arrays | CharArraysInputStream | CharArraysInputStream ||
+| File | FileReader | FileWriter ||
+| Pines | PinedReader | PinedWriter ||
+| Buffering | BufferedReader | BufferedWriter ||
+| Fitering | FilterReader | FilterWriter||
+| Parsing | PushbackReader,LineNumberReader| ||
+| String | StringReader | StringWriter ||
+| Data |  |  ||
+| Data-formatted || PrintWriter||
+| Objects |  |  ||
+| Utilities |  | ||
