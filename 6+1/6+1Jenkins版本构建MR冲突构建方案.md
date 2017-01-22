@@ -48,7 +48,14 @@ MR 工程，和版本构建的工程，共用的是同一套slaves 节点。
  --username  ******** --password ******* 
  ```
  
- ### 方案3，通过脚本，让MR 所在的总结点掉线。就可以让后面排队的工程陷入等待状态。
+ 
+### 方案3，通过脚本，让MR 所在的总结点掉线。就可以让后面排队的工程陷入等待状态。
  > java -jar jenkins-cli.jar -s http://***.***.***.***:8080/jenkins/  -noKeyAuth offline-node NameOfNode 
  --username  ******** --password ******* 
+ <br />
+ 
+ > 版本跑完后，再让其重新链接：
+ 类似如下：
+ java -jar jenkins-cli.jar -s http://***.***.***.***:8080/jenkins/ online-node [NAME]
+
  
