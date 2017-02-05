@@ -1,4 +1,4 @@
-```
+```shell
 Build Java
 You can use Bazel to build your Java application. In this tutorial you'll learn how to:
 
