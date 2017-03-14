@@ -1,6 +1,12 @@
 ```XML
+Linux 用户的分类：
+1，root 用户。
+2，虚拟用户。（如email，bin，ftp，games,ntp，sshd 等。）
+3，普通真实用户，
+通过，groups ldl 显示ldl 用户所在的组。
+
+
 useradd 选项 用户名
- 
 -c comment 指定一段注释性描述。
 -d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。
 -g 用户组 指定用户所属的用户组。
@@ -13,6 +19,10 @@ useradd 选项 用户名
 -M 不要自动建立用户的登入目录。
 -n 取消建立以用户名称为名的群组。
 -r 创建系统账户
-
 常用命令 useradd -d /home/ldl -m ldl
+
+
+Linux 创建用户的时候
+会根据/etc/skel 下的文件，赋予用户相应的权限。
+创建用户的时候涉及的另一个文件：/etc/login.defs 配置文件
 ```
