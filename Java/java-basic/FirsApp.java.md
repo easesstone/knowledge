@@ -27,7 +27,8 @@ root@master:/home/java/FirstApp#
 
 ```
 可以手动的进行编辑，当然，也可以用下面的maven 命名快速生成一个标准的java 简单项目。
-mvn archetype:generate -DgroupId=com.sydney.dream -DartifactId=FirstApp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false  -Dversion=1.0  -DarchetypeCatalog=internal
+mvn archetype:generate -DgroupId=com.sydney.dream -DartifactId=FirstApp -DarchetypeArtifactId=maven-archetype-quickstart
+-DinteractiveMode=false  -Dversion=1.0  -DarchetypeCatalog=internal
 
 pom.xml 稍作修改如下：
 ```
