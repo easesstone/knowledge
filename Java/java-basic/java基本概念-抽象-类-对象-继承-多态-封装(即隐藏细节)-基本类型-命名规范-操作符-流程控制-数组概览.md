@@ -13,3 +13,19 @@
 3，对象与对象之间的联系，以及对象的属性和行为，可以通过对象对外提供的接口来实现，比如凤凰，对外提供的属性有：<br />
 赤红的羽毛，锋利的爪子，深邃的眼睛。对外提供的行为有，你惹我，我就烧死你。而凤凰和其他鸟类的联系，比如，我是<br />
 神兽，其他所有的鸟类都要对我敬畏三分。<br/>
+
+### 堆栈与堆
+1，对象的引用存在于堆栈中，实际的对象存在堆中。 <br />
+2，对于基本的数据类型，其直接存在于堆中。  <br />
+
+### 基本数据类型
+
+<table class="table table-bordered table-striped table-condensed">
+    <tr><td>基本类型</td><td>大小</td><td>最小值</td><td>最大值</td><td>包装器类型</td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+     
+</table>
