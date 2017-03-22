@@ -1,5 +1,6 @@
 
 ### 例子：
+注意java 中默认引入java.lang 下面所有的类。
 root@master:/home/java/FirstApp# cat FirstApp.java 
 ```java
 public class FirstApp{
