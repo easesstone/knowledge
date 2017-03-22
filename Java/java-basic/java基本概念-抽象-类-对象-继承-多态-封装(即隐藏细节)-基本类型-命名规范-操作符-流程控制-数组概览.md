@@ -31,5 +31,10 @@
     <tr><td>float</td><td>32 bits</td><td>IEEE754</td><td>IEEEE754</td><td>Float</td><td>0.0f</td></tr>
     <tr><td>double</td><td>64 bits</td><td>IEEEE754</td><td>IEEEE754</td><td>Double</td><td>0.0d</td></tr>
     <tr><td>void</td><td>-</td><td>-</td><td>-</td><td>Void</td><td>-</td></tr>
-     
-</table>
+</table>  
+注意Ll Dd Ff  (0X 0x  --16  进制)  八进制以0开头，小数默认double。
+### 操作符
+1，算术运算符+ - * / % (注意+ - 可以作为正负，也可以作为加减)
+2，自增自减运算符  ++ -- （注意a++ 与 ++a 在有些场合的区别。）
+3，关系运算符 >  <  >=  <= == !=  （注意等等对比对象的情况）
+4, 逻辑运算符 ||  &&  !  (注意逻辑|| 和逻辑&& 的短路现象）
