@@ -21,11 +21,15 @@
 ### 基本数据类型
 
 <table class="table table-bordered table-striped table-condensed">
-    <tr><td>基本类型</td><td>大小</td><td>最小值</td><td>最大值</td><td>包装器类型</td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>基本类型</td><td>大小</td><td>最小值</td><td>最大值</td><td>包装器类型</td><td>在类中时的默认值</td></tr>
+    <tr><td>boolean</td><td>-</td><td>-</td><td>-</td><td>Boolean</td><td>false</td></tr>
+    <tr><td>char</td><td>16 bits</td><td>Unicode 0</td><td>2的16次方-1</td><td>Char</td><td>'\u0000' null</td></tr>
+    <tr><td>byte</td><td>8 bits</td><td>-128</td><td>+127</td><td>Byte</td><td>0</td></tr>
+    <tr><td>short</td><td>16 bits</td><td>-2的15次方</td><td>2的15次方-1</td><td>Short</td><td>0</td></tr>
+    <tr><td>int</td><td>32 bits</td><td>-2的31次方</td><td>2的31次方-1</td><td>Int</td><td>0</td></tr>
+    <tr><td>long</td><td>64 bits</td><td>-2的63次方</td><td>2的31次方-1</td><td>Long</td><td>0L</td></tr>
+    <tr><td>float</td><td>32 bits</td><td>IEEE754</td><td>IEEEE754</td><td>Float</td><td>0.0f</td></tr>
+    <tr><td>double</td><td>64 bits</td><td>IEEEE754</td><td>IEEEE754</td><td>Double</td><td>0.0d</td></tr>
+    <tr><td>void</td><td>-</td><td>-</td><td>-</td><td>Void</td><td>-</td></tr>
      
 </table>
