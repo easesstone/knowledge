@@ -32,9 +32,9 @@
     <tr><td>double</td><td>64 bits</td><td>IEEEE754</td><td>IEEEE754</td><td>Double</td><td>0.0d</td></tr>
     <tr><td>void</td><td>-</td><td>-</td><td>-</td><td>Void</td><td>-</td></tr>
 </table>  
-注意Ll Dd Ff  (0X 0x  --16  进制)  八进制以0开头，小数默认double。
-
-
+注意Ll Dd Ff  (0X 0x  --16  进制)  八进制以0开头，小数默认double。  
+指数记数法
+1.39e-43f 相当于1.39 x 10 的-43 次方。
 ### 操作符
 1，算术运算符+ - * / % (注意+ - 可以作为正负，也可以作为加减)  
 2，自增自减运算符  ++ -- （注意a++ 与 ++a 在有些场合的区别。）  
