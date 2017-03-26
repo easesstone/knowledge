@@ -16,3 +16,9 @@ set noexpandtab
 set nu 展示行号   
 set autoindent  自动缩进  
 set cindent  针对c语言的自动缩进  
+
+
+### 搜索字符
+/或者？  加要找的字符。  
+快速回到行首或者行尾  home end
+快速回到首行或尾行shift+g gg
