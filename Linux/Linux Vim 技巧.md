@@ -9,7 +9,7 @@
 dd或者n+dd  
 
 ### vim 显示缩进等设置。
-编辑用户目录下的.vimrc
+编辑用户目录下的.vimrc  
 set tabstop=4   tab默认空格数  
 set softtabstop=4   
 set shiftwidth=4   
