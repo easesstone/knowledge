@@ -17,7 +17,7 @@ usage: alternatives --install <link> <name> <path> <priority>
 common options: --verbose --test --help --usage --version
                 --altdir <directory> --admindir <directory>
 例如：
-[root@SHA1000031310 ~]# update-alternatives --install /usr/bin/java  java   /opt/odbc/jdk1.7.0_60/bin/ja
+[root@SHA1000031310 ~]# update-alternatives --install /usr/bin/java  java   /opt/odbc/jdk1.7.0_60/bin/java
 [root@SHA1000031310 ~]# update-alternatives --config java
 
 There are 3 programs which provide 'java'.
