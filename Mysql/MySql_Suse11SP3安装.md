@@ -84,6 +84,8 @@ delete from user where user="easy" and host="SHA1000046667"
 GRANT ALL PRIVILEGES ON *.* TO root@"%" IDENTIFIED BY "root";
 grant all privileges on  test.*  to easy@SHA1000046667  identified by "easy";
 刷新系统权限表：SHA1000046667 这的是可以链接到服务器的机器ip. 
+identified by "***" 这个表示认证的密码，
+root@ 表示用root 用户登录，后面@ 的内容指的是ip.
 flush privileges;
 ```
 
