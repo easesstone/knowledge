@@ -79,14 +79,16 @@ insert into user(Host,User,Password) values("SHA1000046667","easy",password("eas
 #### 10,用户删除，
 delete from user where user="easy" and host="SHA1000046667"
 
-#### 11, 为用户授权。test 是数据库，
+#### 11, 为用户授权。test 是数据库，,允许远程登录。
 ```
+修改/etc/mysql/mysql.conf.d/mysqld.cnf，注释掉bind-address	= 127.0.0.1
 GRANT ALL PRIVILEGES ON *.* TO root@"%" IDENTIFIED BY "root";
 grant all privileges on  test.*  to easy@SHA1000046667  identified by "easy";
 刷新系统权限表：SHA1000046667 这的是可以链接到服务器的机器ip. 
 identified by "***" 这个表示认证的密码，
 root@ 表示用root 用户登录，后面@ 的内容指的是ip.
 flush privileges;
+重启mysql 服务
 ```
 
 #### 12，重启mysql 服务。/etc/init.d/mysql stop/start
