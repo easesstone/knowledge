@@ -1,3 +1,4 @@
+```
 log4j:WARN No appenders could be found for logger (org.springframework.test.context.junit4.SpringJUnit4ClassRunner).
 log4j:WARN Please initialize the log4j system properly.
 
@@ -52,3 +53,4 @@ Caused by: java.io.FileNotFoundException: class path resource [application.xml] 
 	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
 	... 41 more
+```
