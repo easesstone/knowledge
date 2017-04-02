@@ -53,4 +53,7 @@ Caused by: java.io.FileNotFoundException: class path resource [application.xml] 
 	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
 	... 41 more
+	
+因为mvn build 的时候，没有包含一些必要的内容。
+设置好build 要包含的内容即可。
 ```
