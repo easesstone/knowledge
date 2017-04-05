@@ -1,4 +1,6 @@
 ```
+
+http://www.cnblogs.com/skywang12345/p/3498454.html#a2
 1. List的实现类主要有: LinkedList, ArrayList, Vector, Stack。
 
 (01) LinkedList是双向链表实现的双端队列；它不是线程安全的，只适用于单线程。
