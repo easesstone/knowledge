@@ -44,3 +44,13 @@ chkconfig [--level 1/2/../6] xxxd on/off//设置xxxd用服务在n状态为开/�
 chkconfig --del xxxd //将任务列表中的xxxd服务删除
 
 ```
+
+```
+1、开机自启动tomcat（非root用户）
+启动用户：auto
+启动脚本路径：/home/auto/apache-tomcat/bin/startup.sh
+在/etc/rc.local 文件中最后添加：
+su - auto -c '/home/auto/apache-tomcat/bin/startup.sh'
+给rc.local增加执行权限：
+chmod +x /etc/rc.local
+```
