@@ -38,6 +38,9 @@ cat /etc/sysconfig/clock
 但以上命令只会当次机器运行有效，机器重启又会无效，如需要，可以如下：
 chkconfig iptables on
 chkconfig iptables off
+
+执行如下命令： sysctl vm.swappiness=0
+把vm.swappiness = 0 写到/etc/sysctl.conf 文件末尾
 ```
 #### 1.4             配置Hosts文件
 ```
