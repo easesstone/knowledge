@@ -11,3 +11,7 @@ hadoop fs -put hello.txt  /user/test  
 hadoop fs -get  /user/test/hello.txt  ./  
 ## 从文件系统中读取内容 
 hadoop fs -cat  /user/test/hello.txt  |tail -10
+## 删除文件或者目录
+fs -rmr /user/test  
+fs -rm -r /user/test
+fs -rm /user/test/hello.txt
