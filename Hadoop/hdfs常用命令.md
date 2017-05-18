@@ -1,29 +1,13 @@
-显示文件目录
-```
-root:/opt/ldl # hadoop fs -lsr /user/hadoop 
-lsr: DEPRECATED: Please use 'ls -R' instead.
-17/05/18 15:35:34 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform...
-using builtin-java classes where applicable
-drwxr-xr-x   - root supergroup          0 2017-05-18 15:35 /user/hadoop/dir1
--rw-r--r--   3 root supergroup         13 2017-05-18 15:35 /user/hadoop/dir1/ldl.txt
-drwxr-xr-x   - root supergroup          0 2017-05-17 14:27 /user/hadoop/dir2
--rw-r--r--   3 root supergroup         13 2017-05-17 16:04 /user/hadoop/ldl.txt
-root:/opt/ldl # hadoop fs -ls /user/hadoop 
-17/05/18 15:38:43 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... 
-using builtin-java classes where applicable
-Found 3 items
-drwxr-xr-x   - root supergroup          0 2017-05-18 15:35 /user/hadoop/dir1
-drwxr-xr-x   - root supergroup          0 2017-05-17 14:27 /user/hadoop/dir2
--rw-r--r--   3 root supergroup         13 2017-05-17 16:04 /user/hadoop/ldl.txt
-root:/opt/ldl # hadoop fs -ls -R  /user/hadoop 
-17/05/18 15:38:54 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... 
-using builtin-java classes where applicable
-drwxr-xr-x   - root supergroup          0 2017-05-18 15:35 /user/hadoop/dir1
--rw-r--r--   3 root supergroup         13 2017-05-18 15:35 /user/hadoop/dir1/ldl.txt
-drwxr-xr-x   - root supergroup          0 2017-05-17 14:27 /user/hadoop/dir2
--rw-r--r--   3 root supergroup         13 2017-05-17 16:04 /user/hadoop/ldl.txt
-```
-创建目录
-```
-
-```
+## 显示文件目录
+hadoop fs -ls -R  /user/hadoop  
+hadoop fs -lsr /user/hadoop  
+hadoop fs -ls /user/hadoop  
+## 创建目录
+hadoop fs -mkdir -p  /user/nima/nima  
+hadoop fs -mkdir /user/nima/nima  
+## 从本地把文件放到hdfs 文件系统
+hadoop fs -put hello.txt  /user/test  
+## 从hdfs 中，把文件取出放到本地
+hadoop fs -get  /user/test/hello.txt  ./  
+## 从文件系统中读取内容 
+hadoop fs -cat  /user/test/hello.txt  |tail -10
