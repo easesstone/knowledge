@@ -15,3 +15,7 @@ hadoop fs -cat  /user/test/hello.txt  |tail -10
 fs -rmr /user/test  
 fs -rm -r /user/test
 fs -rm /user/test/hello.txt
+## 拷贝文件到本地目录
+hadoop fs -copyToLocal /user/nima/nima/hello.txt  ./
+## 拷贝文件到hdfs文件系统
+hadoop fs -copyFromLocal hello.txt  /user/nima/nima
