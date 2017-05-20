@@ -10,8 +10,14 @@ c,NameNode 获取Client 的请求，记录Block的信息，并返回可用的Dat
      block2(host7,host8,host4)
 block 存放原理：
 NameNode具有RackAware机架感知功能，这个可以配置。
-  1,若client为DataNode节点，那存储block时，规则为：副本1，同client的节点上；副本2，不同机架节点上；副本3，同第二个副本机架的另一个节点上；其他副本随   机挑选。
-  2,若client不为DataNode节点，那存储block时，规则为：副本1，随机选择一个节点上；副本2，不同副本1，机架上；副本3，同副本2相同的另一个节点上；其他副本随   机挑选。
+  1,若client为DataNode节点，那存储block时，规则为：
+    副本1，同client的节点上；
+    副本2，不同机架节点上；
+    副本3，同第二个副本机架的另一个节点上；其他副本随   机挑选。
+  2,若client不为DataNode节点，那存储block时，规则为：
+    副本1，随机选择一个节点上；
+    副本2，不同副本1，机架上；
+    副本3，同副本2相同的另一个节点上；其他副本随   机挑选。
 d,Client 获取NameNode 返回的存放block 的datanode信息，开始写数据。
 写数据的过程是流式的写过程。
 先写第一块block1.
@@ -26,7 +32,8 @@ d,Client 获取NameNode 返回的存放block 的datanode信息，开始写数据
 至此，两块block 内容写到hdfs 系统中，则写完成。
 析，通过写过程，我们可以了解到：
     ①写1T文件，我们需要3T的存储，3T的网络流量贷款。
-    ②在执行读或写的过程中，NameNode和DataNode通过HeartBeat进行保存通信，确定DataNode活着。如果发现DataNode死掉了，就将死掉的DataNode上的数据，放到其他节点去。读取时，要读其他节点去。
+    ②在执行读或写的过程中，NameNode和DataNode通过HeartBeat进行保存通信，
+    确定DataNode活着。如果发现DataNode死掉了，就将死掉的DataNode上的数据，放到其他节点去。读取时，要读其他节点去。
     ③挂掉一个节点，没关系，还有其他节点可以备份；甚至，挂掉某一个机架，也没关系；其他机架上，也有备份。
 ```
 
