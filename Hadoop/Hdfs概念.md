@@ -29,5 +29,21 @@ HDFS采用一种称为机架感知(rack-aware)的策略来改进数据的可靠�
 本地机器上存放一块blocks，同一个机架上的另一台机器存放第二块block, 第三块存放到其他机器上。<br />
 （另外hdfs 的读取，是先读取最近的block 为原则，例如：如果在读取程序的同一个机架上有一个副本，那么就读取该副本。）    
 
+## Namenode 文件结构
+```
+hdfs-site.xml中定义的dfs.name 文件的存放位置
+${dfs.name}/current/VERSION
+                   /edits
+                   /fsimage
+                   
+VERSION 的值：
+#Wed May 17 13:40:02 CST 2017
+namespaceID=272346466  文件系统的唯一标识，是在文件系统初次格式化的时候生成的
+clusterID=CID-c8f6a199-79da-4a51-a4bb-833a3d735d7c
+cTime=0
+storageType=NAME_NODE  表示此文件夹保存的是Namenode 的数据。
+blockpoolID=BP-1612505008-100.109.241.112-1494999602925
+layoutVersion=-63
+```
 
 
