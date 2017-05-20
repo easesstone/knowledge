@@ -1,6 +1,6 @@
 参考链接：http://www.cnblogs.com/laov/p/3434917.html
 
-写流程：
+## 写流程：
 ```
 比如你有一个100M的文件。则写的流程大致如下。
 a,Client 将File 分块，分别为block1,和block2 （64M，和36M）
@@ -28,6 +28,15 @@ d,Client 获取NameNode 返回的存放block 的datanode信息，开始写数据
     ①写1T文件，我们需要3T的存储，3T的网络流量贷款。
     ②在执行读或写的过程中，NameNode和DataNode通过HeartBeat进行保存通信，确定DataNode活着。如果发现DataNode死掉了，就将死掉的DataNode上的数据，放到其他节点去。读取时，要读其他节点去。
     ③挂掉一个节点，没关系，还有其他节点可以备份；甚至，挂掉某一个机架，也没关系；其他机架上，也有备份。
+```
+
+## 读流程
+```
+a. client向namenode发送读请求。
+b. namenode查看Metadata信息，返回fileA的block的位置。
+    block1:host2,host1,host3
+    block2:host7,host8,host4
+c. block的位置是有先后顺序的，先读block1，再读block2。而且block1去host2上读取；然后block2，去host7上读取
 ```
 
 
