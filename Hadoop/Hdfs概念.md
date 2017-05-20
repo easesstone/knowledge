@@ -1,4 +1,4 @@
-# 概念 
+# hdfs概述与hdfs设计目标
 ```
 HDFS集群主要由一个NameNode来管理文件系统元数据和存储实际数据的DataNodes。    
 另外其他的概念还有Secondary NameNode,Fsimage Block等。  
@@ -37,6 +37,7 @@ HDFS采用一种称为机架感知(rack-aware)的策略来改进数据的可靠�
 
 ## Namenode 文件结构
 ```
+概括的说namenode 主要保存两种信息，文件和blocks 的对应关系，（block 和datanod的对应关系，集群启动时由datanode 对应地上传）。
 hdfs-site.xml中定义的dfs.name 文件的存放位置
 ${dfs.name}/current/VERSION
                    /edits
@@ -79,3 +80,7 @@ Datanode 启动的时候，产生一个本地文件所对应的所有的HDFS的�
 hdfs 的namenode 所在机器故障，称为单点故障。需要人为重启。
 ```
 
+## 命名空间
+```
+文件系统支持传统的层次文件组织结构，namespace用于管理文件系统的资源。
+```
