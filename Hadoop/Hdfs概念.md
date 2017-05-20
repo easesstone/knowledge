@@ -9,7 +9,7 @@ HDFS集群主要由一个NameNode来管理文件系统元数据和存储实际�
 4，有交互式的shell。  
 5，易于监控集群状态。
 ```
-## Namenode和Datanode
+## Namenode和Datanode简述
 ```
 namenode相当于一个管理者，或者说是服务器，负责对文件系统[namespace]metada 的管理以及响应客户端的请求，  
 响应对文件系统中的文件的操作，如删除，保存，打开，关闭，重命名文件或者文件夹等，以及管理block 和对应的  
@@ -50,6 +50,17 @@ cTime=0
 storageType=NAME_NODE  表示此文件夹保存的是Namenode 的数据。
 blockpoolID=BP-1612505008-100.109.241.112-1494999602925
 layoutVersion=-63
+
+1，namenode 把文件和文件夹的元数据保存在文件系统树中
+2，信息会以问价的形式保存：命名空间镜像fsimage和修改日记fsedit
+3, 保存文件包含的数据块和所在的datanode. 虽然这些信息并没有存在namenaode 的文件系统中，其数据是系统启动的时候，
+由datanode主动上报得来。
 ```
 
+## Secondary namenode
+```
+1, 不是Namenode 的备份。
+2，周期的合并命名空间镜像和修改日记文件。
+3，合并后的命名空间镜像在Secondary Namenode 也保存一份。防止Namenode 数据丢失时，可以恢复。
+```
 
