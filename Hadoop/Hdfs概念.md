@@ -63,4 +63,19 @@ layoutVersion=-63
 2，周期的合并命名空间镜像和修改日记文件。
 3，合并后的命名空间镜像在Secondary Namenode 也保存一份。防止Namenode 数据丢失时，可以恢复。
 ```
+## 一次checkpoint 过程
+```
+当系统namenode 启动的时候，从磁盘中读取Editlog 和FsImage 到内存, 将所有的Editlog作用于FsImage 中，生成新的FsImage
+,新的FsImage 会把东西保存到本地磁盘中，删除旧的EditLog。这个过程称为一个检查点（checkpoint）
+```
+
+## DataNode 状态报告
+```
+Datanode 启动的时候，产生一个本地文件所对应的所有的HDFS的数据块列表报告，上传到Nomenode.此报告是块状态报告。
+```
+
+### 单点故障
+```
+hdfs 的namenode 所在机器故障，称为单点故障。需要人为重启。
+```
 
