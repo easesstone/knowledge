@@ -37,7 +37,8 @@ HDFS采用一种称为机架感知(rack-aware)的策略来改进数据的可靠�
 
 ## Namenode 文件结构
 ```
-概括的说namenode 主要保存两种信息，文件和blocks 的对应关系，（block 和datanod的对应关系，集群启动时由datanode 对应地上传）。
+概括的说namenode 主要保存两种信息，文件和blocks 的对应关系，（block 和datanod的对应关系，
+集群启动时由datanode 对应地上传）。
 hdfs-site.xml中定义的dfs.name 文件的存放位置
 ${dfs.name}/current/VERSION
                    /edits
@@ -97,6 +98,8 @@ Namenode 作用，元数据管理和响应客户端请求。
   数据操作日志文件是用来记录元数据操作的，在每次改动元数据时都会追加日志记录，
   如果有完整的日志就可以还原完整的元数据。主要作用是用来完善fsimage，
   减少fsimage和内存元数据的差距。称为editslog。
-  
-  
+ 
+ 
+Checkpoint 机制
+
 ```
