@@ -16,8 +16,9 @@
 export SCRIPT_HOME="$(cd "`dirname $0`"/..; pwd)"  ## 脚本目录
 export BUILD_HOME=$1    ## Spark 代码所处路径
 export CODE_PACAKGE_HOME=$2  ## 代码分发过来的路径
-export SBT_MAVEN_PROFILES_ARGS=${SBT_MAVEN_PROFILES_ARGS:-"-Pyarn -Pdatasight-hadoop-2.7  -Dhadoop.version=2.7.2 -Dzookeeper.version=3.5.1 \
- -Dhbase.version=1.0.2 -Phive -Phive-thriftserver -Phbase"} ## sbt 编译所需的参数,参数以及请参考maven 官网
+## sbt 编译所需的参数,参数以及请参考maven 官网
+export SBT_MAVEN_PROFILES_ARGS=${SBT_MAVEN_PROFILES_ARGS:-"-Pyarn -Pdatasight-hadoop-2.7  -Dhadoop.version=2.7.2 \ 
+-Dzookeeper.version=3.5.1 -Dhbase.version=1.0.2 -Phive -Phive-thriftserver -Phbase"} 
 export _SUITE_TESTS_ONLY=true  ## sbt 编译所需参数，表示按照Suite 来跑用例。
 
 #####################################################################
