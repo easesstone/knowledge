@@ -51,3 +51,5 @@ DEFAULT_TIMEZONE="US/Eastern"
 *  3,ln /usr/share/zoneinfo/Asia/Shanghai /etc/localtime ，报错的话，rm /etc/localtime,
 之后 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 *  4，如果是，Rehat 或者centOS 可以用timeconfig 设置。
+
+### profile设置TZ=TZ='Asia/Shanghai'  
