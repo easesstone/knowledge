@@ -1,6 +1,6 @@
 Fusion Insight 安装
 ## 1,环境准备。
-### 1.1 三台Linux 机器，带大小网，密码相同
+### 1.1 三台Linux 机器,不一定需要带大小网（双平面和单平面的区别），密码相同
 ### 1.2 挂盘，挂到opt目录下
 ### 1.3 挂载镜像
 例如：mount rhel-server-6.4-x86_64-dvd.iso /media/ -o loop  
