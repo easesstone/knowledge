@@ -1,0 +1,125 @@
+```
+当接口人将近一个月了，有三件事经常让我不爽，其中一件就是对方不懂看日志，所以总结了一篇文档介绍一下如何看FI的日志。
+下面以FI的生命周期介绍如何看日志，这样比较好理解。出现问题时，可根据问题出现时的阶段来搜索，其主要有以下四个
+一、om安装启动过程
+二、集群安装启动过程
+三、集群运行过程
+四、升级过程
+首先，FI 所有的日志都默认在/var/log/Bigdata目录下(也可在安装的时候通过install.sh -l指定日志目录)，下面是每个阶段的详细介绍。
+ 
+一、oms安装启动过程报错
+这个步骤只在oms节点进行，因此报错时只在oms节点上找日志。安装oms需要安装如下组件，如果在安装启动时报错，可在节点执行以下命令进行查看出现异常的组件：
+sh /opt/huawei/Bigdata/om-0.0.1/sbin/status-oms.sh
+
+如果指令无法执行（这个情况较少见），查看以下日志进行问题定位，多半是环境问题。
+/var/log/Bigdata/controller/scriptlog/install.log
+注意：安装启动完om后，即使前台没报错，最好也查看oms各组件状态，有些兄弟是通过ideploy或DF来安装的，有时候某个组件出错了但安装前台不一定会报错的，从而导致后面的集群安装有问题，图中的ResHAStatus全是Normal则是正常的，Exception则代表该组件需要修复。同时，如果是双机，可以在这里看主备节点的主机信息（上图是单节点的，双机时看上图中HAActive字段就可以分主备了）。
+也许你会遇到一堆组件都Exception了，不知道从那个组件下手，那么看完下图你就清楚先修复哪个，先找什么日志了。（此图来自IT的FI产品文档，如有侵权，请通知删除），或者看install.log日志，找到第一个报错的组件。
+
+查找出异常的组件后就应该去找相应的报错日志了，下面对oms的每个组件的日志进行介绍。
+oms日志基本都在/var/log/Bigdata/omm/oms目录和/var/log/Bigdata/omm/oms/ha/scriptlog目录下，如下图，对应组件的日志的目录名（或文件名）跟组件名是对应的，其中db是gaussdb的日志目录（oms组件中它的问题最多）。
+
+
+另外，aos及acs日志在/var/log/Bigdata/controller/目录下也有，是更详细的启动运行日志，这两个日志也经常用到（后面会提到）。此外controller、Httpd、oldap、kerberros、tomcat是比较重要的组件，在/var/log/Bigdata下也有相对应的日志目录，其也更为详细。比如tomcat的日志就对应/var/log/Bigdata /tomcat目录，对于apache tomcat熟悉的同学就知道怎么办了，进入目录后直接看catalina日志就OK了。此外，tomcat目录下的web.log记录了FI前台显示的报错，但信息量不大。
+为了大家复制粘贴，我把它们全部列出来，有多个的按重要性（个人认为）的进行排序，从上往下找。
+1、    acs
+/var/log/Bigdata/controller/acs.log
+/var/log/Bigdata/omm/ha/scriptlog/acs.log
+2、    aos
+/var/log/Bigdata/controller/acs.log
+/var/log/Bigdata/omm/ha/scriptlog/aos.log
+3、    cep
+/var/log/Bigdata/omm/oms/cep
+4、    controller
+/var/log/Bigdata/controller
+/var/log/Bigdata/omm/ha/scriptlog/controller.log
+5、    feed_watchdog
+/var/log/Bigdata/omm/ha/scriptlog/feed_watchdog.log
+6、    fms
+/var/log/Bigdata/omm/oms/fms
+7、    floatip
+/var/log/Bigdata/omm/ha/scriptlog/floatip.log
+8、    gaussDB
+/var/log/Bigdata/omm/oms/db/
+注意：
+主要看gs_ctl-current.log和gaussdb-XX.log
+这两个日志用中的时间会和系统时间相差八个小时，正常的。
+9、    heartBeatCheck
+/var/log/Bigdata/omm/oms/heartBeatCheck
+10、httpd
+/var/log/Bigdata/httpd
+/var/log/Bigdata/omm/oms/ha/scriptlog/httpd.log
+11、iam
+/var/log/Bigdata/omm/oms/iam
+12、ntp
+/var/log/Bigdata/omm/oms/ha/scriptlog/ ha_ntp.log
+13、okerberos
+/var/log/Bigdata/okerberos
+/var/log/Bigdata/omm/oms/ha/scriptlog/okerberos.log
+14、oldap
+/var/log/Bigdata/oldapserver
+/var/log/Bigdata/omm/oms/ha/scriptlog/oldap.log
+15、pms
+/var/log/Bigdata/omm/oms/pms
+16、tomcat
+/var/log/Bigdata/tomcat
+/var/log/Bigdata/omm/oms/ha/scriptlog/tomcat.log
+ 
+二、集群安装启动过程：
+om安装成功后，就可以安装和启动集群了，在配置好安装信息好，其执行步骤如下图所示，
+
+如需查看后台日志，在整个流程中，主管理节点下的/var/log/Bigdata/controller/controller.log都有相关的日志，它记录组件安装、升级、补丁、配置、监控、告警和日常运维操作，但不是非常详细。
+下面把10个步骤所对应的节点和日志目录查找方法介绍一下。
+1~4步的日志都在oms节点上，5~10步需要先找到相应的节点。当某一步出现错误时，可以点击其左边的加号查看前台日志，来定位节点和组件。以第8步举个例子，下图中就可以获取这些信息。
+
+以下是每个步骤所对应的目录：
+1~4：预安装
+/var/log/Bigdata/controller/controller.log
+5：安装节点
+/var/log/Bigdata/nodeagent/scriptlog/install.log
+/var/log/Bigdata/nodeagent/scriptlog/start-agent.log
+/var/log/Bigdata/nodeagent/scriptlog/nodeagent_ctl.log
+/var/log/Bigdata/nodeagent/agentlog/agent.log
+6~7：安装组件和配置集群，
+/var/log/Bigdata/controller/controller.log
+/var/log/Bigdata/nodeagent/agentlog/agent.log
+8~9：初始化集群和启动集群，点其左边的加号定位节点和组件（上面已经介绍过了），到/var/log/Bigdata/目录下找到相应服务的组件目录，看启动日志和运行日志。这样说可能不大好理解，还是举个例子吧，比如在安装node01节点的hdfs的namenode时出了异常，找到了相应目录（如下图，nn是namenode缩写，同理dn是datanode，jn是jounalnode）。
+
+看到一堆日志，看哪些呢，这个问题看图中红圈的启动日志和运行日志就行了，不过还是介绍一下FI中几种用的比较多的日志类型吧。
+xxxstartxxx.log：组件启动日志；
+xxx.log：组件运行日志，基本组件出问题了都会去查找；
+xxx_ctl.log：控制日志，并不是每个组件都有，gaussDB中很重要的一个日志。
+hadoop.log：hadoop的客户端操作日志；
+xxx-gc.log：是组件进程的gc日志，在定位由于内存溢出导致的进程异常时有帮助；
+xxx-audit-xxx.log：审计日志，基本放在/var/log/Bigdata/audit目录下，记录了各组件的审计信息。比如hdfs组件，主要记录了文件操作信息，如文件的读、写、增、删等。
+10：我还没遇到过这一步出现问题的……
+ 
+三、集群运行过程
+当集群在运行时某个服务报错，先登陆FI前台（别只盯着业务前台），如果无法打开页面，说明oms出异常了，按第一步修复。找到报错的服务，查看其报错组件所在的节点，然后到相应的/var/log/Bigdata路径找到相应的服务，进去找到相应组件的日志（这个和第二阶段的8~9步一样的）。同样，要是又一堆服务出问题了，先看哪个呢，哪个都先别去看，先检查节点情况，看下图中有没有节点无效，如果无效，到节点之间把nodeagent进程杀掉，让它自动重新拉起。
+
+如果节点都是正常的，到后台查看一下内存、磁盘（经常是这两个问题，注意集群的datanode节点的/srv/Bigdata目录要有10G预留空间），如果都没问题，那么依次检查基础组件ldapserver、dbserver、kerberos、HDFS是否出问题，它们出问题会引起其他服务出问题，一般这几个修复好就没什么问题了。
+ 
+四、集群升级过程
+当在升级oms或集群时报错，其日志一般在/var/log/Bigdata/update/upgrade****.log中，同时在/var/log/Bigdata/controller/controller.log也有相应记录。在升级oms后也应该去看看主管理节点各组件状态，操作如第一步。
+在升级集群时报错，参照过程二进行日志查找。
+ 
+五、题外话
+1、如果觉得日志量不够，可以开启日志的debug模式（FI默认的日志level为INFO），开启方式如下（以HDFS为例）：前台à服务管理中点击要改的服务à服务配置à全部配置à搜levelà勾选级别。
+
+ 
+2、找到日志后，在这里顺便提一下解决问题的三板斧吧：
+1)      根据前台报错和日志搜FI的FAQ
+http://3ms.huawei.com/hi/group/2034741/thread_5788845.html
+2)      到hi3和hadoop团队空间进行搜索
+http://3ms.huawei.com/hi/blog/index.html
+http://3ms.huawei.com/hi/group/2034741
+3)      找接口人处理
+ 
+3、上面说的只是集群组件出错的看日志方法，业务应用上的问题如何看日志，也需要很多经验的，比如用户鉴权失败了，需要去看：
+/var/log/Bigdata/controller/acs.log
+/var/log/Bigdata/controller/acs.log
+（aos是权限管理，查询指定用户的权限；acs是用户和用户组管理。Web Service会检查所登录用户的合法性以及结合AOS判断是否有权限执行某个操作）。我这部分的经验不足，就先不瞎bb了。
+ 
+4、某冠男特别懒，哦不，特别忙，总结了一些很有用的东西，推广一下：
+
+```
