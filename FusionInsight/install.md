@@ -82,7 +82,8 @@ g_pkgs_dir="suse-11.4:/media/"
 ### 2.1 执行如下脚本进行安装：./FusionInsight/software/preinstall/preinstall.sh
 请忽略如下报错：
 ```
-FusionInsight/software/precheck/checkNodes.Config: No such file or directory 
+[ERROR] localhost: fail to parse configuaration file, check the file name or the content of config file.
+[ERROR] localhost: quit the programme.
 ```
 
 ### 2.2 配置install.ini,single 和两个ip
