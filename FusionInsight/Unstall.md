@@ -16,3 +16,7 @@ sh uninstall.sh
 
 sh uninstall.sh
 ```
+
+
+
+sh /opt/huawei/Bigdata/om-server/om/inst/uninstall.sh
