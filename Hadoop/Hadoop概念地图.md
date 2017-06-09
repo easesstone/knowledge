@@ -11,5 +11,9 @@
 6，hdfs 读写流程  
 7，hdfs shell
 8，hdfs 对外api
+## MapReduce 
+1，分布式计算框架并行计算模型（核心理念，移动计算而非移动数据，模型和原理，将数据切分成小的数据块，进行平行处理)  
+2，MapReduce 架构（JobTracker和TaskTracker,master/slaves机制）  
+3，核心处理函数Map 和Reduce 函数  
 
 
