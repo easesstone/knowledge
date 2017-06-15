@@ -1,3 +1,4 @@
+http://blog.chinaunix.net/uid-20465760-id-3064252.html
 ```shell
 #!/usr/bin/expect 
 if { $argc < 3} {
