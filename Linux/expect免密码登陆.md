@@ -26,13 +26,13 @@ set ip [lindex $argv 0]
 set username [lindex $argv 1]
 set password [lindex $argv 2]
 set timeout 10
-spawn ssh $username@$ip
+spawn ssh $username@$ip  
 expect {
  "*yes/no" {send "yes\n";exp_continue}
  "*Password:" {send "$password\n"}
 }
 
-expect
+expect "*#" 
 send "ls /\n"
 send "cd /home\n"
 send "ls /\n"
