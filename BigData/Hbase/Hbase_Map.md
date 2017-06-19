@@ -30,3 +30,9 @@ Server，Client， RegionServer
 或者：SortedMap<RowKey,List<SortedMap<Cloumn,List<Value,Timestamp>>>>
 SortedMap 表示的是这张表，里面包含一个列族List ，列族里面包另一个存储列和相应的值。
 ```
+
+## Hbase 特点
+```
+提供唯一的索引，rowkeys, 方便检索，字典排序。
+可以过滤掉无用的行和信息，给网络传输减压。
+```
