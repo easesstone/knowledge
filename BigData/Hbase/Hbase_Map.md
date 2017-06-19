@@ -1,3 +1,6 @@
+## 官方文档链接：
+http://abloz.com/hbase/book.html 
+
 ## 传统的关系型数据库。
 ```
 1,无垂直增长的用户，以及垂直增加的数据。I/O 开销，网络原因，限制了客户端的访问速度。
@@ -11,4 +14,11 @@
 不可以包含太多内容，也不可以修改太过频繁。
 4，列族中的内容保存到一个文件中。文件叫做HFile。
 5，
+```
+
+## Hbase 数据模型
+```sql
+（Table，RowKey,Family,Column,Timestamp）-> Value
+或者：SortedMap<RowKey,List<SortedMap<Cloumn,List<Value,Timestamp>>>>
+SortedMap 表示的是这张表，里面包含一个列族List ，列族里面包另一个存储列和相应的值。
 ```
