@@ -10,6 +10,8 @@ http://abloz.com/hbase/book.html
 ## Hbase 大致架构
 ```
 Server，Client， RegionServer
+（主Server 经由Zookeeper（可靠，高可用，持久化的分布式协调系统），协调RegionServer，把
+故障的RegionServer 一道另一个地方去。）
 ```
 ## Hbase 基本概念
 ```
