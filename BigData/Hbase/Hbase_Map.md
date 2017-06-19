@@ -6,6 +6,11 @@ http://abloz.com/hbase/book.html
 1,无垂直增长的用户，以及垂直增加的数据。I/O 开销，网络原因，限制了客户端的访问速度。
 2，而Hbase 很好的解决了这些问题。
 ```
+
+## Hbase 大致架构
+```
+Server，Client， RegionServer
+```
 ## Hbase 基本概念
 ```
 1，基本单位是列，一列或者多列组成一行，存在着唯一的行健（row keys），
