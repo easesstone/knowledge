@@ -4,3 +4,5 @@ http://ics.chinasoftosg.com/SignOnServlet?Error=LIN102%09%E5%B8%90%E5%8F%B7%E4%B
 
 Hadoop 视频
 http://www.bjsxt.com/2015/down_0526/41.html
+
+http://bbs.csdn.net/topics/392020706 
