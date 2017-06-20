@@ -81,8 +81,11 @@ bin/hbase-stop.sh
 # 客户端API
 ## 基本API 情况
 ```java
-//Hbase 的主要的客户端借款，org.apache.hadoop.hbase.client 中的HTable.
+//Hbase 的主要的客户端借口，org.apache.hadoop.hbase.client 中的HTable.
+//一般情况下，在一个客户端访问的生命周期中，只建议有一个HTable 实例。如果实在是需要，那么用HTabelPool 类实现。
 //提供了如下主要的AIP 
 //1,CRUD 
+//
+
 ```
 
