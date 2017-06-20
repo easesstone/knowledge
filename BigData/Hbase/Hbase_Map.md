@@ -1,3 +1,4 @@
+# 基本概念
 ## 官方文档链接：
 http://abloz.com/hbase/book.html 
 
@@ -70,5 +71,11 @@ SortedMap 表示的是这张表，里面包含一个列族List ，列族里面�
 2，分布式模式。
    伪分布模式。
    完全分布式模式。
-
 ```
+
+## Hbase 集群的简单启动和停止
+```
+bin/hbase-start.sh
+bin/hbase-stop.sh
+```
+# 对外API
