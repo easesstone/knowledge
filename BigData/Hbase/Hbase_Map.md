@@ -1,6 +1,25 @@
 ## 官方文档链接：
 http://abloz.com/hbase/book.html 
 
+## Hbase 架构的硬件条件和软件条件
+```
+硬件主要考虑如下两个方面的内容，
+一，服务器。（Linux 机器，考虑CPU，磁盘，内存，机架，）
+二，网络。
+软件：
+一，操作系统。
+二，软件。
+（JDK,HADOOP，SSH,域名服务，文件句柄与进程限制（io异常，too many open file），datanode 处理的文件上限数。）
+too many open file：/etc/security/limits.conf ，/etc/security/limits.conf ，等文件系统异常的配置。
+尽量减少使用swap 分区。
+一般都会配套hdfs 文件系统进行使用Hbase，因为hdfs 提供了传统的或者其他的文件系统或者说
+数据库所不具有的强大使用的功能。
+文件系统：
+1，本地文件系统，
+2，HDFS（可扩展，防丢失，容错，可靠，自动冗余）
+
+```
+
 ## 传统的关系型数据库。
 ```
 1,垂直增长的用户，以及垂直增加的数据。I/O 开销，网络原因，限制了客户端的访问速度。
@@ -43,4 +62,13 @@ SortedMap 表示的是这张表，里面包含一个列族List ，列族里面�
 所以，其基本的架构一般如下,(分两种类型的节点）
 1，master 机器上（HDFS 的NameNode,MapReduce的JobTracker，和Hbase 的master--Hmaster）
 2，slave 节点的  (HDFS 的DataNode，MapReduce的Task Tracker， 和Hbase 的RegionServer)
+```
+
+## Hbase 运行模式
+```
+1，单机模式。
+2，分布式模式。
+   伪分布模式。
+   完全分布式模式。
+
 ```
