@@ -36,3 +36,11 @@ SortedMap 表示的是这张表，里面包含一个列族List ，列族里面�
 提供唯一的索引，rowkeys, 方便检索，字典排序。
 可以过滤掉无用的行和信息，给网络传输减压。
 ```
+
+## Hbase 和其他组件的简单架构
+```
+一般情况下，hbase 的表存在hdfs 中，同时一般上设计map和reduce 的操作。
+所以，其基本的架构一般如下,(分两种类型的节点）
+1，master 机器上（HDFS 的NameNode,MapReduce的JobTracker，和Hbase 的master--Hmaster）
+2，slave 节点的  (HDFS 的DataNode，MapReduce的Task Tracker， 和Hbase 的RegionServer)
+```
