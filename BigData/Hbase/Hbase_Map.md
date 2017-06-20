@@ -78,4 +78,11 @@ SortedMap 表示的是这张表，里面包含一个列族List ，列族里面�
 bin/hbase-start.sh
 bin/hbase-stop.sh
 ```
-# 对外API
+# 客户端API
+## 基本API 情况
+```java
+//Hbase 的主要的客户端借款，org.apache.hadoop.hbase.client 中的HTable.
+//提供了如下主要的AIP 
+//1,CRUD 
+```
+
