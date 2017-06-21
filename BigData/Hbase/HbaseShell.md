@@ -107,3 +107,20 @@ $ ./bin/hbase shell -d
 ```
 echo "describe 'test'"  | ./hbase shell -n 
 ```
+
+## 可以把命令写在文件中，
+```
+./hbase shell ./sample_commands.txt
+
+./sample_commands.txt 的内容如下：
+create 'test', 'cf'
+list 'test'
+put 'test', 'row1', 'cf:a', 'value1'
+put 'test', 'row2', 'cf:b', 'value2'
+put 'test', 'row3', 'cf:c', 'value3'
+put 'test', 'row4', 'cf:d', 'value4'
+scan 'test'
+get 'test', 'row1'
+disable 'test'
+enable 'test'
+```
