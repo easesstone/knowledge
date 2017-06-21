@@ -18,3 +18,13 @@ table.put(put);
 table.close();
 connection.close();
 ```
+## Hbase shell 补充
+```
+help  获取帮助
+help 'generate' 获取详细帮助
+help 'ddl'
+help '命令'
+
+
+
+```
