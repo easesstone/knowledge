@@ -5,7 +5,7 @@
 1，Linux 虚拟机三台。
 2，集群时间同步，关闭swap，关闭防火墙。
 3，配置互信。
-4，ip映射。
+4，ip映射。（注意Ubuntu 环境下，把127.0.1.1 ubuntu  改成127.0.0.1 ubuntu）
 5，安装jdk （每台）
 6，在其中一台机器上下载hadoop tar 包
 7，解压，配置etc/conf 下的五个文件。
@@ -16,6 +16,7 @@ mapred-site.xml
 slaves
 hadoop-env.sh
 8，把配置好的文件的整个hadoop 目录，拷贝到其他两个机器上。
+9，好hadoop 的sbin 目录下，启动HDFS。
 ```
 ### core-site.xml
 ```xml
