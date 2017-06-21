@@ -124,7 +124,7 @@ slave2
     <name>dfs.replication</name>
     <value>3</value>
   </property>
-  <!-- 新增的配置 -->
+  <!-- 新增的配置,Hbase 并不会默认启动WebUI,所以要在这里加上。 -->
   <property>
     <name>hbase.master.info.port</name>
     <value>60010</value>
