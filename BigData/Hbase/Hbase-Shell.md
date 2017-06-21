@@ -84,3 +84,8 @@ hbase(main):013:0> drop 'test'
 ```
 exit
 ```
+## 开启Debug 模式
+```
+想要在shell中看到 DEBUG 级别的 logging ，可以在启动的时候加上 -d 参数.
+$ ./bin/hbase shell -d
+```
