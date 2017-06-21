@@ -7,7 +7,7 @@
 3，配置互信。
 4，ip映射。
 5，安装jdk （每台）
-6，下载hadoop tar 包
+6，在其中一台机器上下载hadoop tar 包
 7，解压，配置etc/conf 下的五个文件。
 core-site.xml
 hdfs-site.xml
@@ -15,6 +15,7 @@ yarn-site.xml
 mapred-site.xml
 slaves
 hadoop-env.sh
+8，把配置好的文件的整个hadoop 目录，拷贝到其他两个机器上。
 ```
 ### core-site.xml
 ```xml
@@ -74,4 +75,15 @@ hadoop-env.sh
         <value>mapreduce_shuffle</value>
     </property>
 </configuration>
+```
+### slaves
+```
+root@master:/home/DataSight/hadoop/etc/hadoop# cat slaves 
+slave1
+slave2
+```
+
+### hadoop-env.sh
+```
+把其中的JAVE_HOME 写成你机器对应的jdk具体的绝对路径。
 ```
