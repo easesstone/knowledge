@@ -102,3 +102,8 @@ exit
 想要在shell中看到 DEBUG 级别的 logging ，可以在启动的时候加上 -d 参数.
 $ ./bin/hbase shell -d
 ```
+
+## 非交互式的shell
+```
+echo "describe 'test'"  | ./hbase shell -n 
+```
