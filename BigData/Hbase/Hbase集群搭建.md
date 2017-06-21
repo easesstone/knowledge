@@ -16,7 +16,8 @@ mapred-site.xml
 slaves
 hadoop-env.sh
 8，把配置好的文件的整个hadoop 目录，拷贝到其他两个机器上。
-9，好hadoop 的sbin 目录下，启动HDFS。 （./start-dfs.sh）
+9，到hadoop 的sbin 目录下，格式化namenode（系统格式化hadoop namenode -format），
+启动HDFS。 （./start-dfs.sh）
 ```
 ### core-site.xml
 ```xml
@@ -87,4 +88,53 @@ slave2
 ### hadoop-env.sh
 ```
 把其中的JAVE_HOME 写成你机器对应的jdk具体的绝对路径。
+```
+
+## 配置启动Hbase 集群
+```
+1，下载Hbase tar 包。
+2，解压，配置里面的 hbase-site.xml，regionservers 
+3，到hbase的bin 目录下，启动hbase 集群。（./start-hbase.sh） 
+```
+
+### hbase-site.xml 
+```xml 
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>hdfs://master:9000/hbase</value> <!--此处与hdfs 中core 中设置的地址相类似 -->
+  </property>
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.clientPort</name>
+    <value>2181</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>master,slave1,slave2</value>
+  </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/home/service/hbase/zk/data</value>
+  </property>
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+  <!-- 新增的配置 -->
+  <property>
+    <name>hbase.master.info.port</name>
+    <value>60010</value>
+  </property>
+  <!-- 新增的配置 -->  
+</configuration>
+```
+### regionservers
+```
+root@master:/home/DataSight/hadoop/etc/hadoop# cat slaves 
+slave1
+slave2
 ```
