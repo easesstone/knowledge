@@ -124,3 +124,9 @@ get 'test', 'row1'
 disable 'test'
 enable 'test'
 ```
+
+## 给Hbase shell传递JVM 参数
+```
+HBASE_SHELL_OPTS="-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps \
+  -XX:+PrintGCDetails -Xloggc:$HBASE_HOME/logs/gc-hbase.log" ./bin/hbase shell
+```
