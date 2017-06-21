@@ -138,3 +138,24 @@ root@master:/home/DataSight/hadoop/etc/hadoop# cat slaves
 slave1
 slave2
 ```
+
+## 集群健康状态检查
+```
+root@master:/home/DataSight/hbase/conf# checkJps 
+---------------master-----------------------
+     1	15363 HMaster
+     2	15300 HQuorumPeer
+     3	7894 ResourceManager
+     4	7625 NameNode
+--------------slave1-------------------------
+     1	1029 SecondaryNameNode
+     2	1175 NodeManager
+     3	4617 HQuorumPeer
+     4	954 DataNode
+     5	4700 HRegionServer
+---------------slave2-----------------------
+     1	3973 HQuorumPeer
+     2	1063 NodeManager
+     3	4056 HRegionServer
+     4	922 DataNode
+```
