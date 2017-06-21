@@ -20,6 +20,12 @@ Version 1.2.6, rUnknown, Mon May 29 02:25:32 CDT 2017
 hbase(main):001:0>
 ```
 
+## 帮助命令
+```
+help 
+help 'list'
+```
+
 ## 列出有哪些表格
 ```
 hbase(main):010:0> list
