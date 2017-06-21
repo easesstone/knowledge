@@ -16,7 +16,7 @@ mapred-site.xml
 slaves
 hadoop-env.sh
 8，把配置好的文件的整个hadoop 目录，拷贝到其他两个机器上。
-9，好hadoop 的sbin 目录下，启动HDFS。
+9，好hadoop 的sbin 目录下，启动HDFS。 （./start-dfs.sh）
 ```
 ### core-site.xml
 ```xml
