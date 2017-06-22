@@ -48,14 +48,14 @@ test
 ## 描述表
 ```
 hbase(main):016:0> describe 'testtable'
-Table testtable is ENABLED                                                                                                      
-testtable                                                                                                                       
-COLUMN FAMILIES DESCRIPTION                                                                                                     
+Table testtable is ENABLED 
+testtable 
+COLUMN FAMILIES DESCRIPTION   
 {NAME => 'colfam1', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false',
 KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCOD
 ING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0',
 BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICA
-TION_SCOPE => '0'}                                                                                                              
+TION_SCOPE => '0'}    
 1 row(s) in 0.1030 seconds
 
 ```
