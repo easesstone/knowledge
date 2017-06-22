@@ -136,3 +136,14 @@ enable 'test'
 HBASE_SHELL_OPTS="-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps \
   -XX:+PrintGCDetails -Xloggc:$HBASE_HOME/logs/gc-hbase.log" ./bin/hbase shell
 ```
+
+## Hbase Namespace
+```
+1、介绍
+在HBase中，namespace命名空间指对一组表的逻辑分组，类似RDBMS中的database，方便对表在业务上划分。Apache HBase从0.98.0, 0.95.2两个版本开始支持namespace级别的授权操作，HBase全局管理员可以创建、修改和回收namespace的授权。
+
+2、namespace
+HBase系统默认定义了两个缺省的namespace
+hbase：系统内建表，包括namespace和meta表
+default：用户建表时未指定namespace的表都创建在此
+```
