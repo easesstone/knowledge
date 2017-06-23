@@ -9,7 +9,7 @@ ZK tar 包
 ```
 jdk 安装，
 配置解压后ZK 目录下的内容，如下：
-conf/zoo.cfg
+conf/zoo.cfg  (ZK 启动的时候，会默认去找这个文件)
 tickTime=2000
 initLimit=10
 syncLimit=5
