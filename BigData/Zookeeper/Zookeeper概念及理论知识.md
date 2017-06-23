@@ -1,4 +1,4 @@
-# Zookeeper 只是地图
+# Zookeeper 知识地图
 ## Zookeeper 的作用 以及特点
 ```
 作用：
