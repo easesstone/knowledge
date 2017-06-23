@@ -1,6 +1,6 @@
-```
 参考单机模式的安装。
 https://github.com/easesstone/knowledge/blob/master/BigData/Zookeeper/ZK%20%E5%8D%95%E6%9C%BA%E6%A8%A1%E5%BC%8F.md
+```
 1，在配置上面，
 在zoo.cfg 中，加入如下配置。
 server.1=master:2888:3888
