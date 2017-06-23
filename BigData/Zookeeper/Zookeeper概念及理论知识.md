@@ -1,8 +1,9 @@
 # Zookeeper 知识地图
 ## Zookeeper 的作用 以及特点
+refered to [IBM-Blog](https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/) 
 ```
 1，官方介绍：保证高可靠的，高可用的协同服务。
-2，使用场景：refered to https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/ 
+2，使用场景：
    a，统一命名服务，（由目录结构这个特点，例如设置Hbase 唯一的row key)
    b, 配置管理，（统一修改保存和修改集群一些相同的配置）
    c, 集群管理，（选举出一个leader 管理集群状态，例如避免传统意义上的单master 故障，方法创建一个序列——临时节点
