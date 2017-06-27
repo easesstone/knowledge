@@ -1,0 +1,7 @@
+```
+JMX enabled by default
+Using config: /root/zookeeper/zookeeper-3.4.5/bin/../conf/zoo.cfg
+Starting zookeeper ... already running as process 947..
+```
+看到$ZOOPIDFILE，想到应该是进程ID文件已经存在，导致启不起来。
+去dataDir下看，果然有一个zookeeper_server.pid，最后一次修改时间是几天前了。由于机器上次是因为断电异常关闭，大概导致了这个pid file的残留。
