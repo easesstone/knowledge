@@ -14,7 +14,7 @@ command=$@
 echo $command
 {
 	echo "---------------------master-------------------"
-  $command 
+        $command 
 	echo "---------------------slave1------------------"
 	ssh  slave1 "source /etc/profile;$command" 
 	echo "--------------------slave2--------------------"
@@ -36,7 +36,7 @@ if [ "$1" == "start" ];then
     start-hbase.sh
     cluster-status-jps
 else 
-echo "stoping now, please wait.............."
+    echo "stoping now, please wait.............."
     stop-hbase.sh
     stop-yarn.sh
     stop-dfs.sh 
