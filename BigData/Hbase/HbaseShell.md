@@ -19,6 +19,8 @@ get 'testtable' , 'row1'  获取某一行的值
 disable 'test'  禁用表格
 drop 'test' 删除表格
 exit 退出
+
+echo "scan 'testtable',{VERSIONS => 10}"  | hbase shell -n  查看所有的历史版本信息
 ```
 
 ## Hbase Namespace
