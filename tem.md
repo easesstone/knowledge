@@ -54,3 +54,4 @@ fi
 7，推荐一个可视化git客户端工具SourceTree （与git.exe 中自带的比较，还是SourceTree 比较好用） 
    和一本书（虽然比较旧），git 权威指南（里面比较详细系统的介绍了git 的一些使用，和高级用法）
 ```
+![HBASECRUD](https://github.com/easesstone/knowledge/blob/master/HBASECRUD.svg)
