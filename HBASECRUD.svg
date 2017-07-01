@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 HBASECRUD.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.6929in" height="31.5709in"
+		viewBox="0 0 841.89 2273.1" xml:space="preserve" color-interpolation-filters="sRGB" class="st10">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvSubprocessMaster" v:prompt="" v:val="VT4(Rectangle)"/>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:url(#grad0-5);stroke:#4f87bb;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:黑体;font-size:1.00001em}
+		.st3 {font-family:Calibri;font-size:1em}
+		.st4 {font-size:1em}
+		.st5 {fill:#000000;font-family:黑体;font-size:1.33333em}
+		.st6 {fill:#000000;font-family:黑体;font-size:1.99999em;font-weight:bold}
+		.st7 {fill:#000000;font-family:Calibri;font-size:1.00001em}
+		.st8 {font-family:黑体;font-size:1em}
+		.st9 {fill:#000000;font-family:Calibri;font-size:1.33333em}
+		.st10 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Patterns_And_Gradients">
+		<linearGradient id="grad0-5" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(60 0.5 0.5)">
+			<stop offset="0" stop-color="#e9eff7" stop-opacity="1"/>
+			<stop offset="0.24" stop-color="#f4f7fb" stop-opacity="1"/>
+			<stop offset="0.54" stop-color="#feffff" stop-opacity="1"/>
+		</linearGradient>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<g id="group102-1" transform="translate(18,-183.118)" v:mID="102" v:groupContext="group">
+			<title>工作表.102</title>
+			<g id="shape17-2" v:mID="17" v:groupContext="shape" transform="translate(3.83693E-13,-1901.12)">
+				<title>矩形.17</title>
+				<desc>建表 1通过Configuration获取Connection。Configuration 需要知道ZK主机和端口 2通过...</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect cx="392.315" cy="2223.5" width="784.63" height="99.2126"/>
+				<rect x="0" y="2173.89" width="784.63" height="99.2126" class="st1"/>
+				<text x="4" y="2189.87" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>建表：<v:newlineChar/><tspan x="4"
+							dy="1.331em" class="st3">1</tspan>，通过<tspan class="st3">Configuration</tspan>获取<tspan class="st3">Connection</tspan>。（<tspan
+							class="st3">Configuration </tspan>需要知道<tspan class="st3">ZK</tspan>主机和端口）<v:newlineChar/><tspan x="4"
+							dy="1.331em" class="st3">2</tspan>，通过<tspan class="st3">Connection </tspan>获取<tspan class="st3">Hbase</tspan>的<tspan
+							class="st3">Admin</tspan>。<v:newlineChar/><v:paragraph v:bulletSize="0.166667"/><tspan x="4"
+							dy="1.331em" class="st3">3</tspan>，创建一个<tspan class="st4" v:langID="1033">HTableDescriptor</tspan>对象，传入表名，并构建<tspan
+							class="st4" v:langID="1033">HColumnDescriptor</tspan>对象，即创建列族，这时还可以设置表的其他属性，比如保存的最带版<tspan x="4"
+							dy="1.233em" class="st4">本数</tspan>，MAXVERSIONS等。<v:newlineChar/><tspan x="4" dy="1.2em" class="st4">4</tspan>，调用Admin的createTabel,传入HtabelDescriptor对象，创建表格，注意，Connection需要及时关闭。<v:newlineChar/></text>			</g>
+			<g id="shape36-21" v:mID="36" v:groupContext="shape" transform="translate(4.47642E-13,-1780.65)">
+				<title>矩形.36</title>
+				<desc>删除表 1通过Configuration获取Connection。Configuration 需要知道ZK主机和端口 2通...</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect cx="392.315" cy="2223.5" width="784.63" height="99.2126"/>
+				<rect x="0" y="2173.89" width="784.63" height="99.2126" class="st1"/>
+				<text x="4" y="2189.87" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>删除表：<v:newlineChar/><tspan x="4"
+							dy="1.331em" class="st3">1</tspan>，通过<tspan class="st3">Configuration</tspan>获取<tspan class="st3">Connection</tspan>。（<tspan
+							class="st3">Configuration </tspan>需要知道<tspan class="st3">ZK</tspan>主机和端口）<v:newlineChar/><tspan x="4"
+							dy="1.331em" class="st3">2</tspan>，通过<tspan class="st3">Connection </tspan>获取<tspan class="st3">Hbase</tspan>的<tspan
+							class="st3">Admin</tspan>。<v:newlineChar/><tspan x="4" dy="1.331em" class="st3">3</tspan>，通过<tspan
+							class="st3">Admin </tspan>的<tspan class="st3">tableExits</tspan>判断是否存在表，并判断表是否禁用，<tspan class="st3">isTableEnabled</tspan><tspan
+							class="st3">.<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st3">4</tspan>，在存在的条件下，如果表格是处于禁用状态，则直接删除表<tspan
+							class="st3">deleteTable</tspan><tspan class="st3">, </tspan>否则先禁用表<tspan class="st3">disableTable</tspan>，然后删除表<v:newlineChar/><v:paragraph
+							v:bulletSize="0.166667"/><v:newlineChar/></text>			</g>
+			<g id="shape37-43" v:mID="37" v:groupContext="shape" transform="translate(5.7554E-13,-1695.61)">
+				<title>矩形.37</title>
+				<desc>获取 1通过Configuration获取Connection。Configuration 需要知道ZK主机和端口 2通过...</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect cx="392.315" cy="2241.21" width="784.63" height="63.7795"/>
+				<rect x="0" y="2209.32" width="784.63" height="63.7795" class="st1"/>
+				<text x="4" y="2225.3" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>获取：<v:newlineChar/><tspan x="4"
+							dy="1.331em" class="st3">1</tspan>，通过<tspan class="st3">Configuration</tspan>获取<tspan class="st3">Connection</tspan>。（<tspan
+							class="st3">Configuration </tspan>需要知道<tspan class="st3">ZK</tspan>主机和端口）<v:newlineChar/><v:paragraph
+							v:bulletSize="0.166667"/><tspan x="4" dy="1.233em" class="st4">2</tspan>，通过Connection 的 getTable 方法获取表，（传入参数表名）<v:newlineChar/></text>			</g>
+			<g id="shape38-53" v:mID="38" v:groupContext="shape" transform="translate(4.47642E-13,-1633.47)">
+				<title>矩形.38</title>
+				<desc>修改表如果有需要可以通过获取Admin对象修改表格。 一般上这个API 用到的机会比较少。Hbase 表格设计好后不建议轻...</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect cx="392.315" cy="2251.84" width="784.63" height="42.5197"/>
+				<rect x="0" y="2230.58" width="784.63" height="42.5197" class="st1"/>
+				<text x="4" y="2246.56" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>修改表，如果有需要，可以通过获取<tspan class="st3">Admin</tspan>对象修改表格。<v:newlineChar/><tspan
+							x="4" dy="1.331em" class="st4">一般上这个</tspan><tspan class="st3">API </tspan>用到的机会比较少。<tspan class="st3">Hbase </tspan>表格设计好后，不建议轻易的修改。</text>			</g>
+			<g id="shape4-61" v:mID="4" v:groupContext="shape" transform="translate(694.397,-1959.23)">
+				<title>矩形.4</title>
+				<desc>创建</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.1162" cy="2257.51" width="90.24" height="31.1811"/>
+				<rect x="0" y="2241.92" width="90.2324" height="31.1811" class="st1"/>
+				<text x="29.12" y="2262.84" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>创建</text>			</g>
+			<g id="shape6-65" v:mID="6" v:groupContext="shape" transform="translate(694.397,-1633.47)">
+				<title>矩形.6</title>
+				<desc>修改</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.1162" cy="2257.51" width="90.24" height="31.1811"/>
+				<rect x="0" y="2241.92" width="90.2324" height="31.1811" class="st1"/>
+				<text x="29.12" y="2262.84" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>修改</text>			</g>
+			<g id="shape5-69" v:mID="5" v:groupContext="shape" transform="translate(694.397,-1838.76)">
+				<title>矩形.5</title>
+				<desc>删除</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.1162" cy="2257.51" width="90.24" height="31.1811"/>
+				<rect x="0" y="2241.92" width="90.2324" height="31.1811" class="st1"/>
+				<text x="29.12" y="2262.84" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>删除</text>			</g>
+			<g id="shape7-73" v:mID="7" v:groupContext="shape" transform="translate(694.397,-1720)">
+				<title>矩形.7</title>
+				<desc>获取</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.1162" cy="2257.51" width="90.24" height="31.1811"/>
+				<rect x="0" y="2241.92" width="90.2324" height="31.1811" class="st1"/>
+				<text x="29.12" y="2262.84" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>获取</text>			</g>
+			<g id="shape85-77" v:mID="85" v:groupContext="shape" transform="translate(3.19744E-13,-2015.29)">
+				<title>矩形.85</title>
+				<desc>针对表格的CRUD 基本操作</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="392.315" cy="2251.84" width="784.63" height="42.5197"/>
+				<rect x="0" y="2230.58" width="784.63" height="42.5197" class="st1"/>
+				<text x="252.68" y="2259.83" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>针对表格的<tspan
+							class="st3">CRUD </tspan>基本操作</text>			</g>
+			<g id="group79-82" transform="translate(6.39488E-13,-225.496)" v:mID="79" v:groupContext="group">
+				<title>工作表.79</title>
+				<g id="shape80-83" v:mID="80" v:groupContext="shape">
+					<title>矩形.76</title>
+					<desc>Update Hbase 数据库一般不涉及修改的部分如果实在是需要修改的可以用Put 的方法替换里面的内容。</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2233.49" width="784.63" height="79.2283"/>
+					<rect x="0" y="2193.87" width="784.63" height="79.2283" class="st1"/>
+					<text x="4" y="2209.86" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Update<tspan class="st8">：<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">Hbase </tspan><tspan class="st8">数据库一般不涉及修改的部分</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">如果实在是需要修改的</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">可以用</tspan>Put <tspan class="st8">的方法</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">替换里面的内容</tspan><tspan class="st8">。</tspan></text>				</g>
+				<g id="shape81-98" v:mID="81" v:groupContext="shape" transform="translate(702.85,-49.6063)">
+					<title>矩形.7</title>
+					<desc>Update</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2258.29" width="81.78" height="29.622"/>
+					<rect x="0" y="2243.48" width="81.7795" height="29.622" class="st1"/>
+					<text x="16.86" y="2263.09" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Update</text>				</g>
+			</g>
+			<g id="group92-102" v:mID="92" v:groupContext="group">
+				<title>工作表.92</title>
+				<g id="shape68-103" v:mID="68" v:groupContext="shape">
+					<title>矩形.68</title>
+					<desc>附加知识点1减少RPC 调用提高性能的两个方向。 1限制往返时间------尽量减少RPC 调用次数即如果数据量比较小设置...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2171.8" width="784.63" height="202.615"/>
+					<rect x="0" y="2070.49" width="784.63" height="202.615" class="st1"/>
+					<text x="4" y="2086.47" class="st2" v:langID="2052"><v:paragraph/><v:tabList/>附加知识点<tspan class="st3">1</tspan>：减少<tspan
+								class="st3">RPC </tspan>调用，提高性能的两个方向。<v:newlineChar/><tspan x="4" dy="1.331em" class="st3">1</tspan>，限制往返时间<tspan
+								class="st3">------</tspan>尽量减少<tspan class="st3">RPC </tspan>调用次数，即如果数据量比较小，设置一个比较好的机制，比如把数据打包，批量发送数据。<v:newlineChar/><tspan
+								x="4" dy="1.331em" class="st3">2</tspan>，另一个方向是传输消息的大小，若果太大，则时间就会耗费在了数据传输上面。从这个方面考虑，如果可能，可以利用<tspan
+								class="st3">HDFS </tspan>的移动计算而不移<tspan x="4" dy="1.331em" class="st4">动数据的思想</tspan>。<v:newlineChar/><tspan
+								x="4" dy="1.331em" class="st3">3</tspan>，另外注意的一点，<tspan class="st3">Put</tspan><tspan class="st3">,</tspan><tspan
+								class="st3">Get</tspan><tspan class="st3">,</tspan><tspan class="st3">Delete </tspan>类的基类是<tspan
+								class="st3">Row </tspan>类。<v:newlineChar/><tspan x="4" dy="1.331em" class="st3">4</tspan>，<tspan
+								class="st3">Get Scan </tspan>区别，可以理解为<tspan class="st3">Get </tspan>获取的是单条数据。<tspan class="st3">Scan </tspan>获取批量的数据。<v:newlineChar/><tspan
+								x="4" dy="1.331em" class="st3">4</tspan>，<tspan class="st3">RockRow </tspan>类，行锁，提供行锁（<tspan
+								class="st3">Row Lock</tspan>）的特性，保证只有一个客户端获取一行数据的相应锁，同时对数据进行显影的修改。慎重地使用锁，<tspan x="4" dy="1.331em"
+								class="st4">因为两个客户端同时请求对方的锁时</tspan>，会出现死锁，（直到锁的时间超时）这样的情况下，会韩飞服务端的处理线程，即服务端资源。<v:newlineChar/><tspan
+								x="4" dy="1.331em" class="st4">锁有限制的时间</tspan>，通过<tspan class="st3">hbase</tspan><tspan class="st3">.</tspan><tspan
+								class="st3">regionserver</tspan><tspan class="st3">.</tspan><tspan class="st3">leass</tspan><tspan
+								class="st3">.</tspan><tspan class="st3">period </tspan>配置，单位毫秒，<tspan class="st3">1</tspan>秒<tspan
+								class="st3">=</tspan><tspan class="st3">1000</tspan>毫秒<v:newlineChar/><tspan x="4" dy="1.331em"
+								class="st3">5</tspan>，用户可以通过<tspan class="st3">tabel </tspan>实例，获取一些配置情况和表的情况。例如得到表明，得到起始<tspan
+								class="st3">Key</tspan>，<tspan class="st3"> </tspan>看表格是否处于<tspan class="st3">Enable </tspan>状态。查看物理分布状况等。<v:newlineChar/></text>				</g>
+				<g id="shape91-146" v:mID="91" v:groupContext="shape" transform="translate(702.85,-166.578)">
+					<title>矩形.7</title>
+					<desc>其他</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2254.27" width="81.78" height="37.658"/>
+					<rect x="0" y="2235.44" width="81.7795" height="37.658" class="st1"/>
+					<text x="24.89" y="2259.6" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>其他</text>				</g>
+			</g>
+			<g id="group94-150" transform="translate(3.83693E-13,-325.984)" v:mID="94" v:groupContext="group">
+				<title>工作表.94</title>
+				<g id="shape95-151" v:mID="95" v:groupContext="shape">
+					<title>矩形.76</title>
+					<desc>Scan: 1基本的首先通过configuration 获取connection 从而得到table对象。 2构造一个Sc...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2132.36" width="784.63" height="281.48"/>
+					<rect x="0" y="1991.62" width="784.63" height="281.48" class="st1"/>
+					<text x="4" y="2006.42" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Scan:<v:newlineChar/><tspan x="4"
+								dy="1.298em" class="st4">1</tspan><tspan class="st8">，</tspan><tspan class="st8">基本的首先通过</tspan>configuration <tspan
+								class="st8">获取</tspan>connection <tspan class="st8">从而得到</tspan>table<tspan class="st8">对象</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">2</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">构造一个</tspan>Scan <tspan class="st8">对象</tspan><tspan
+								class="st8">，</tspan>Scan <tspan class="st8">对象可以设置</tspan>addFamily<tspan class="st8">，</tspan>addColumn,setStartRow<tspan
+								class="st8">，</tspan>setEndRow<tspan class="st8">，</tspan>setMaxVersions <tspan class="st8">等</tspan> <tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">3</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">通过</tspan>table <tspan class="st8">的</tspan>getScanner <tspan
+								class="st8">方法</tspan><tspan class="st8">，</tspan><tspan class="st8">传入</tspan>Scan<tspan
+								class="st8">对象</tspan><tspan class="st8">，</tspan><tspan class="st8">返回一个</tspan>ResultScanner <tspan
+								class="st8">对象</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">4</tspan><tspan class="st8">，</tspan><tspan class="st8">对</tspan>ResultScanner <tspan
+								class="st8">对象遍历</tspan><tspan class="st8">，</tspan><tspan class="st8">则可以得到自己所需要的内容</tspan><tspan
+								class="st8">。（</tspan><tspan class="st8">把行数据封装成</tspan>Result <tspan class="st8">类</tspan><tspan
+								class="st8">，</tspan>for(Result result: scanner)<tspan class="st8">）<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st8">其他</tspan>;<v:newlineChar/><tspan x="4" dy="1.331em" class="st4">Scanner </tspan><tspan
+								class="st8">对象用完需要</tspan>close<tspan class="st8">。<v:newlineChar/></tspan><tspan x="4"
+								dy="1.331em" class="st4">Scan </tspan><tspan class="st8">放回是以行为单位的</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">ScannerResult </tspan><tspan class="st8">类</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">把</tspan>Scan <tspan class="st8">操作转换为类似</tspan>Get <tspan class="st8">操作</tspan><tspan
+								class="st8">，（</tspan><tspan class="st8">每</tspan>Get <tspan class="st8">一次</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">则发送一次</tspan>RPC<tspan class="st8">），</tspan>ScannerResult<tspan
+								class="st8">把每一行封装成一个</tspan>Result <tspan class="st8">类</tspan><tspan class="st8">，</tspan>Scan<tspan
+								class="st8">操作</tspan><tspan class="st8">，</tspan><tspan class="st8">每次</tspan><tspan x="4"
+								dy="1.331em" class="st8">把</tspan>Scan <tspan class="st8">查到的数据中的一行</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">调用一次</tspan>RPC <tspan class="st8">返回客户端</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">Scan </tspan><tspan class="st8">也有限制的时间</tspan><tspan class="st8">。</tspan><tspan
+								class="st8">通过</tspan>hbase.regionserver.leass.period <tspan class="st8">设置</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">单位毫秒</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st8">针对</tspan>Scanner <tspan class="st8">的缓存和批处理</tspan><tspan
+								class="st8">：<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st8">缓存</tspan><tspan
+								class="st8">：（</tspan><tspan class="st8">面向行的设置</tspan><tspan class="st8">）<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st8">通过</tspan>table <tspan class="st8">的</tspan>setCaching(int caching) <tspan
+								class="st8">设置每次</tspan>PRC <tspan class="st8">请求返回的行数</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">不宜设置过大</tspan><tspan class="st8">，</tspan><tspan class="st8">设置过大</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">会使带宽称为瓶颈</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">传输的时间长</tspan><tspan class="st8">，</tspan><tspan class="st8">会出现扫描器的</tspan><tspan
+								x="4" dy="1.331em" class="st8">租约时间超时</tspan><tspan class="st8">，</tspan><tspan class="st8">从而抛出异常</tspan><tspan
+								class="st8">。</tspan><tspan class="st8">并且客户端可能会出现</tspan>OOM<tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st8">批处理</tspan><tspan class="st8">：（</tspan><tspan class="st8">面向列</tspan><tspan
+								class="st8">）<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">setBatch</tspan>(int batch),, <tspan
+								class="st8">通过合理设置缓存和批处理</tspan><tspan class="st8">，</tspan><tspan class="st8">使得</tspan>RPC <tspan
+								class="st8">的调用次数减少</tspan><tspan class="st8">，</tspan><tspan class="st8">从而提高性能</tspan><tspan
+								class="st8">。</tspan><v:newlineChar/><v:newlineChar/></text>				</g>
+				<g id="shape96-274" v:mID="96" v:groupContext="shape" transform="translate(702.85,-237.34)">
+					<title>矩形.7</title>
+					<desc>Scan</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2251.03" width="81.78" height="44.1407"/>
+					<rect x="0" y="2228.96" width="81.7795" height="44.1407" class="st1"/>
+					<text x="25.8" y="2255.83" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Scan</text>				</g>
+			</g>
+			<g id="group72-278" transform="translate(0,-1294.3)" v:mID="72" v:groupContext="group">
+				<title>工作表.72</title>
+				<g id="shape62-279" v:mID="62" v:groupContext="shape" transform="translate(0,-12.4687)">
+					<title>矩形.62</title>
+					<desc>Put: 1参考上面的获取表格的操作获取Tabel对象connection.getTable 2创建Put对象传入row名...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2150.57" width="784.63" height="245.055"/>
+					<rect x="0" y="2028.05" width="784.63" height="245.055" class="st1"/>
+					<text x="4" y="2042.85" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Put:<v:newlineChar/><tspan x="4"
+								dy="1.298em" class="st4">1</tspan><tspan class="st8">，</tspan><tspan class="st8">参考上面的获取表格的操作</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">获取</tspan>Tabel<tspan class="st8">对象</tspan><tspan
+								class="st8">，</tspan>connection.getTable<v:newlineChar/><tspan x="4" dy="1.331em" class="st4">2</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">创建</tspan>Put<tspan class="st8">对象</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">传入</tspan>row<tspan class="st8">名字<v:newlineChar/><v:paragraph
+									v:bulletSize="0.166667"/></tspan><tspan x="4" dy="1.331em" class="st4">3</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">给</tspan>Put <tspan class="st8">对象设置列族属性</tspan><tspan
+								class="st8">，</tspan>addCloumn<tspan class="st8">，</tspan><tspan class="st8">三个参数分别对应着</tspan><tspan
+								class="st8">，</tspan>ColumnFamily<tspan class="st8">，</tspan>Q<tspan class="st8" v:langID="1033">Ualifier</tspan><tspan
+								class="st8" v:langID="1033">，</tspan><tspan class="st8">Value</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">即</tspan><tspan class="st8">K</tspan><tspan class="st8">-</tspan><tspan class="st8">V</tspan><tspan
+								class="st8">对和值</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.233em"
+								class="st8">4</tspan><tspan class="st8">，</tspan><tspan class="st8">调用</tspan><tspan class="st8">Table</tspan><tspan
+								class="st8">的</tspan><tspan class="st8">put </tspan><tspan class="st8">方法</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">给表格添加数据</tspan><tspan class="st8">。<v:newlineChar/><v:paragraph/></tspan><tspan x="4"
+								dy="1.298em" class="st8">注意点</tspan><tspan class="st8">：<v:newlineChar/></tspan><tspan x="4"
+								dy="1.331em" class="st4">I </tspan><tspan class="st8">，</tspan>Table <tspan class="st8">的</tspan>put <tspan
+								class="st8">方法除了传入</tspan>Put<tspan class="st8">对象外</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">还可以传入</tspan>Put <tspan class="st8">列表</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">所以一般数据量多的情况下</tspan><tspan class="st8">，</tspan><tspan class="st8">一般把</tspan>Put<tspan
+								class="st8">对象扔到</tspan>Put<tspan class="st8">列表</tspan>List<tspan class="st8">中<v:newlineChar/><v:paragraph
+									v:bulletSize="0.166667"/></tspan><tspan x="4" dy="1.331em" class="st4">II</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">可以利用</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan
+								class="st8"> </tspan><tspan class="st8">实现缓存批量异步</tspan><tspan class="st8">Put</tspan><tspan
+								class="st8">操作</tspan><tspan class="st8">，</tspan><tspan class="st8">过程</tspan><tspan class="st8">：<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">       </tspan>A<tspan class="st8">，</tspan><tspan class="st8">得到</tspan>Connection<tspan
+								class="st8">，</tspan><tspan class="st8">通过</tspan>Connection <tspan class="st8">的</tspan><tspan
+								class="st8" v:langID="1033">getBufferedMutator</tspan><tspan class="st8"> </tspan><tspan
+								class="st8">获得</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan class="st8"> </tspan><tspan
+								class="st8">对象</tspan><tspan class="st8">，<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">       </tspan>B<tspan class="st8">，</tspan><tspan class="st8">创建一些类的</tspan>Put<tspan
+								class="st8">对象</tspan><tspan class="st8">，</tspan><tspan class="st8">给</tspan>Put<tspan class="st8">对象设置好值</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">       </tspan>C<tspan
+								class="st8">，</tspan><tspan class="st8">通过</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan
+								class="st8"> </tspan><tspan class="st8">对象的</tspan><tspan class="st8">mut</tspan><tspan class="st8"
+								v:langID="1033">ate</tspan><tspan class="st8">方法添加</tspan><tspan class="st8">put</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">       </tspan>D<tspan
+								class="st8">，</tspan><tspan class="st8">整形</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan
+								class="st8"> </tspan><tspan class="st8">对象的</tspan><tspan class="st8" v:langID="1033">flush</tspan><tspan
+								class="st8">方法</tspan><tspan class="st8">，</tspan><tspan class="st8">把内容正式存到</tspan><tspan
+								class="st8">Hbase </tspan><tspan class="st8">数据库</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">       </tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan
+								class="st8">的</tspan><tspan class="st8">mutate </tspan><tspan class="st8">方法可以传入</tspan><tspan
+								class="st8" v:langID="1033">Mutation</tspan><tspan class="st8">列表</tspan><tspan class="st8"> </tspan><tspan
+								class="st8">List</tspan><tspan class="st8">&#60;</tspan><tspan class="st8">Mutation</tspan><tspan
+								class="st8">&#62; </tspan><tspan class="st8">mutations</tspan><tspan class="st8">（</tspan><tspan
+								class="st8">Put </tspan><tspan class="st8">的基类</tspan><tspan class="st8">)</tspan><tspan
+								class="st8">也是通过</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan
+								class="st8"> </tspan><tspan class="st8">的</tspan><tspan class="st8">flush</tspan><tspan class="st8">方法</tspan><tspan
+								class="st8">Put<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">III</tspan><tspan
+								class="st8">，</tspan>table <tspan class="st8">中提供了一个保证原子一直性的操作</tspan><tspan class="st8">。</tspan>checkAndPut(put)<tspan
+								class="st8">，<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">IV</tspan><tspan
+								class="st8">，</tspan><tspan class="st8" v:langID="1033">BufferedMutator</tspan><tspan class="st8"> </tspan><tspan
+								class="st8">，</tspan><tspan class="st8">Table</tspan><tspan class="st8">，</tspan><tspan class="st8">Connection </tspan><tspan
+								class="st8">用完需要释放掉</tspan></text>				</g>
+				<g id="shape69-437" v:mID="69" v:groupContext="shape" transform="translate(694.397,-212.598)">
+					<title>矩形.7</title>
+					<desc>Put</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="45.1162" cy="2256.87" width="90.24" height="32.4567"/>
+					<rect x="0" y="2240.65" width="90.2324" height="32.4567" class="st1"/>
+					<text x="34.1" y="2261.67" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Put</text>				</g>
+			</g>
+			<g id="group74-441" transform="translate(0,-1105.65)" v:mID="74" v:groupContext="group">
+				<title>工作表.74</title>
+				<g id="shape42-442" v:mID="42" v:groupContext="shape">
+					<title>矩形</title>
+					<desc>Get: 1参考上面的内容获得Connection 对象。然后获取Table 对象。 2创建Get 对象一般传入row 的...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2183.17" width="784.63" height="179.858"/>
+					<rect x="0" y="2093.24" width="784.63" height="179.858" class="st1"/>
+					<text x="4" y="2108.04" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Get:<v:newlineChar/><tspan x="4"
+								dy="1.298em" class="st4">1</tspan><tspan class="st8">，</tspan><tspan class="st8">参考上面的内容</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">获得</tspan>Connection <tspan class="st8">对象</tspan><tspan
+								class="st8">。</tspan><tspan class="st8">然后获取</tspan>Table <tspan class="st8">对象</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">2</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">创建</tspan>Get <tspan class="st8">对象</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">一般传入</tspan>row <tspan class="st8">的值</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">3</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">可以加其他的限定条件</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">比如</tspan>addFamily,addColumn,setTimeRange,setTimeStamp,setMaxVersions <tspan
+								class="st8">等</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">4</tspan><tspan class="st8">，</tspan><tspan class="st8">最终通过</tspan>Tabel<tspan
+								class="st8">的</tspan>get <tspan class="st8">方法获取结果</tspan><tspan class="st8">。</tspan><tspan
+								class="st8">返回值要么是</tspan>Result <tspan class="st8">要么是</tspan>Result<tspan class="st8">数组</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st8">其他</tspan><tspan
+								class="st8">：<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">I  </tspan><tspan
+								class="st8">，</tspan> <tspan class="st8">同样的把</tspan>Get<tspan class="st8">封装成一个</tspan>List <tspan
+								class="st8">列表</tspan><tspan class="st8">，</tspan><tspan class="st8">可以方便地获取一批数据</tspan><tspan
+								class="st8">。</tspan>Table <tspan class="st8">的</tspan>get <tspan class="st8">方法可以传入一个</tspan>get <tspan
+								class="st8">列表</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">II </tspan><tspan class="st8">，</tspan>get <tspan class="st8">的到的数据封装在</tspan>Result <tspan
+								class="st8">中</tspan><tspan class="st8">，</tspan><tspan class="st8">里面包含</tspan>row <tspan
+								class="st8">，</tspan>family ,key, size<tspan class="st8">，</tspan>value,list,<tspan class="st8">（</tspan><tspan
+								class="st8">键值对数目</tspan><tspan class="st8">）</tspan>, isempty, KeyValue<tspan class="st8">，</tspan> <tspan
+								class="st8">以及</tspan>KeyValue<tspan class="st8">列表</tspan> <tspan class="st8">等一系列方</tspan><tspan
+								x="4" dy="1.331em" class="st8">法</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4"
+								dy="1.331em" class="st4">III</tspan><tspan class="st8">，</tspan><tspan class="st8">注意</tspan>geRowOrBefore <tspan
+								class="st8">的使用方法</tspan><tspan class="st8">，</tspan><tspan class="st8">以及一些下显示某些数据是否存在</tspan>Hbase <tspan
+								class="st8">数据库的方法</tspan><tspan class="st8">。</tspan></text>				</g>
+				<g id="shape73-520" v:mID="73" v:groupContext="shape" transform="translate(702.85,-151.654)">
+					<title>矩形.7</title>
+					<desc>Get</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2259" width="81.78" height="28.2047"/>
+					<rect x="0" y="2244.9" width="81.7795" height="28.2047" class="st1"/>
+					<text x="29.18" y="2263.8" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Get</text>				</g>
+			</g>
+			<g id="group78-524" transform="translate(2.55795E-13,-869.598)" v:mID="78" v:groupContext="group">
+				<title>工作表.78</title>
+				<g id="shape76-525" v:mID="76" v:groupContext="shape">
+					<title>矩形.76</title>
+					<desc>Delete: 1同样的通过Configuration 得到Connection 和Table。 2传入行的名字构建Del...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2165.7" width="784.63" height="214.795"/>
+					<rect x="0" y="2058.31" width="784.63" height="214.795" class="st1"/>
+					<text x="4" y="2073.11" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Delete:<v:newlineChar/><tspan
+								x="4" dy="1.298em" class="st4">1</tspan><tspan class="st8">，</tspan><tspan class="st8">同样的通过</tspan>Configuration <tspan
+								class="st8">得到</tspan>Connection <tspan class="st8">和</tspan>Table<tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">2</tspan><tspan class="st8">，</tspan><tspan class="st8">传入行的名字构建</tspan>Delete <tspan
+								class="st8">对象</tspan><tspan class="st8">，<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">3</tspan><tspan class="st8">，</tspan><tspan class="st8">注意</tspan>addColumn,addColumns,addFamily <tspan
+								class="st8">的函数间的区别</tspan><tspan class="st8">。</tspan><tspan class="st8">不懂得可以直接查找官网的</tspan>API<tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">4</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">最后是调用</tspan>table <tspan class="st8">的</tspan>delete <tspan
+								class="st8">方法来进行删除数据</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st8">其他</tspan><tspan class="st8">：<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st8">同样的</tspan><tspan class="st8">，</tspan>Delete <tspan class="st8">也可以封装成一个数据列表</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">传给</tspan>table<tspan class="st8">的</tspan>delete <tspan
+								class="st8">方法</tspan><tspan class="st8">。</tspan><tspan class="st8">也有原子性操作</tspan>Compare-and-delet<tspan
+								class="st8">，</tspan><tspan class="st8">即</tspan>checkAndDelete.<v:newlineChar/><tspan x="4"
+								dy="1.331em" class="st4">Table </tspan><tspan class="st8">的</tspan>delte <tspan class="st8">方法</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">对应的功能</tspan><tspan class="st8">，</tspan><tspan class="st8">具体可以查询</tspan>API <tspan
+								class="st8">，</tspan><tspan class="st8">大概可以分为以下几种</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">Delete </tspan><tspan class="st8">对象</tspan> <tspan class="st8">的设置方法</tspan>                         <tspan
+								class="st8">无时间戳</tspan>                                                                           <tspan
+								class="st8">有时间戳<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">none                                                              </tspan><tspan
+								class="st8">删除整行</tspan><tspan class="st8">，</tspan><tspan class="st8">包括所有列的版本</tspan>                                   <tspan
+								class="st8">从给定的列族删除相同时间戳或者更旧时间戳的版本<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">addColumn                                                  </tspan><tspan
+								class="st8">删除给定列的最新版本</tspan><tspan class="st8">，</tspan><tspan class="st8">保留旧版本</tspan>                      <tspan
+								class="st8">从给定列删除与时间戳相同的列</tspan><tspan class="st8">，</tspan><tspan class="st8">没有则不删除</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">addColumns                                                </tspan><tspan
+								class="st8">删除给定列的所有版本</tspan>                                                <tspan class="st8">从给定列删除与时间戳相同或者更旧的版本</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">addFamily                                                    </tspan><tspan
+								class="st8">删除给定列族的所有版本</tspan><tspan class="st8">，</tspan><tspan class="st8">包括旧版本</tspan>                 <tspan
+								class="st8">从给定列族下删除所有与时间戳相同或者更旧的版本</tspan><tspan class="st8">。</tspan></text>				</g>
+				<g id="shape77-604" v:mID="77" v:groupContext="shape" transform="translate(702.85,-181.112)">
+					<title>矩形.7</title>
+					<desc>Delete</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2256.26" width="81.78" height="33.6834"/>
+					<rect x="0" y="2239.42" width="81.7795" height="33.6834" class="st1"/>
+					<text x="19.51" y="2261.06" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Delete</text>				</g>
+			</g>
+			<g id="shape83-608" v:mID="83" v:groupContext="shape" transform="translate(4.47642E-13,-1573.23)">
+				<title>矩形.83</title>
+				<desc>针对数据的CRUD 基本操作</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="392.315" cy="2251.84" width="784.63" height="42.5197"/>
+				<rect x="0" y="2230.58" width="784.63" height="42.5197" class="st1"/>
+				<text x="252.68" y="2259.83" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>针对数据的<tspan
+							class="st3">CRUD </tspan>基本操作</text>			</g>
+			<g id="group88-613" transform="translate(2.55795E-13,-628.724)" v:mID="88" v:groupContext="group">
+				<title>工作表.88</title>
+				<g id="shape89-614" v:mID="89" v:groupContext="shape">
+					<title>矩形.76</title>
+					<desc>Batch 1批量操作这里的批量操作不是指单一的删除插入查询操作而是指这些操作的组合 事实上table 的delete,p...</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+					<v:textRect cx="392.315" cy="2163.3" width="784.63" height="219.614"/>
+					<rect x="0" y="2053.49" width="784.63" height="219.614" class="st1"/>
+					<text x="4" y="2069.47" class="st7" v:langID="2052"><v:paragraph/><v:tabList/>Batch<tspan class="st8">：<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">1</tspan><tspan class="st8">，</tspan><tspan class="st8">批量操作</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">这里的批量操作</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">不是指单一的删除</tspan><tspan class="st8">，</tspan><tspan class="st8">插入</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">查询操作</tspan><tspan class="st8">，</tspan><tspan class="st8">而是指这些操作的组合</tspan><tspan
+								class="st8">，<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st8">事实上</tspan><tspan
+								class="st8">，</tspan>table <tspan class="st8">的</tspan>delete,put,get<tspan class="st8">等操作都是基于</tspan>batch <tspan
+								class="st8">这个操作的</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st4">2</tspan><tspan class="st8">，</tspan>batch <tspan class="st8">操作</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">最基本的首先通过</tspan>configuration <tspan class="st8">获取</tspan>connection <tspan
+								class="st8">从而得到</tspan>table<tspan class="st8">对象</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">3</tspan><tspan class="st8">，</tspan><tspan class="st8">建立一个</tspan>Row <tspan
+								class="st8">类型的</tspan>List<tspan class="st8">，</tspan> <tspan class="st8">往里面添加</tspan>Put<tspan
+								class="st8">，</tspan> Delete <tspan class="st8">，</tspan>Get <tspan class="st8">对象</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">4</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">调用</tspan>table <tspan class="st8">对象的</tspan>batch <tspan
+								class="st8">，</tspan><tspan class="st8">传入</tspan>Row <tspan class="st8">类型的列表</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st8">其他</tspan><tspan
+								class="st8">：<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">Batch </tspan><tspan
+								class="st8">的构造函数中的</tspan>Object[] results ,<tspan class="st8">其中的值可能为如下四种</tspan><tspan
+								class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em" class="st4">null</tspan><tspan
+								class="st8">：</tspan><tspan class="st8">与远程服务器通信失败</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">EmptyResult</tspan><tspan class="st8">：</tspan> Put <tspan
+								class="st8">和</tspan>Delete <tspan class="st8">成功后返回的结果</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.331em" class="st4">Result</tspan><tspan class="st8">：</tspan> Get <tspan class="st8">成功返回的结果</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">如果</tspan>Get <tspan class="st8">失败</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">则返回空的</tspan>Result.<v:newlineChar/><tspan x="4"
+								dy="1.331em" class="st4">Throwable</tspan>: <tspan class="st8">服务器向客户端返回的异常</tspan><tspan
+								class="st8">，</tspan><tspan class="st8">客户端可以根据异常</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">定位到出错的原因</tspan><tspan class="st8">。<v:newlineChar/></tspan><tspan x="4" dy="1.331em"
+								class="st8">除了</tspan>batch <tspan class="st8">方法外</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">还有一个</tspan>batchCallBack <tspan class="st8">的方法</tspan><tspan class="st8">，</tspan><tspan
+								class="st8">可以针对失败的操作进行相应的处理</tspan><tspan class="st8">。</tspan></text>				</g>
+				<g id="shape90-704" v:mID="90" v:groupContext="shape" transform="translate(702.85,-185.175)">
+					<title>矩形.7</title>
+					<desc>Batch</desc>
+					<v:userDefs>
+						<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+					</v:userDefs>
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="40.8898" cy="2255.88" width="81.78" height="34.4391"/>
+					<rect x="0" y="2238.66" width="81.7795" height="34.4391" class="st1"/>
+					<text x="22.44" y="2260.68" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Batch</text>				</g>
+			</g>
+		</g>
+	</g>
+</svg>
