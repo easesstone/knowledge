@@ -10,3 +10,6 @@ Hadoop 00视频00
 http://www.bjsxt.com/2015/down_0526/41.html
 
 http://bbs.csdn.net/topics/392020706 
+
+
+put a picture to hbase
