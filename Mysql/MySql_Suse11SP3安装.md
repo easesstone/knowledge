@@ -111,4 +111,4 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib
 #### 13，netstat -ntpl ；查看，mysql 所占用的端口。
 #### 14 ，mysql 安装之后的目录结构，如下：/var/lib/mysql/  数据库的数据目录：    /usr/share/mysql；数据库配置目录：       /usr/bin：mysql 命令：
 #### 15 ，卸载  rpm -qa|grep -i mysql  ，rpm -e *****.
-#### 16,利用 lsof  -i:3306 监听3306 端口绑定的程序。
+#### 16,利用 listen lsof  -i:3306 监听3306 端口绑定的程序。
