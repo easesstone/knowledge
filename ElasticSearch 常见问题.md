@@ -102,4 +102,12 @@ ERROR: Unknown plugin license
 解决方案：使用最新命令安装所有插件
 bin/elasticsearch-plugin install x-pack
 
+
+[2017-07-21T07:47:02,855][INFO ][o.e.b.BootstrapChecks    ] [node-1] bound or publishing to a non-loopback or non-link-local address, enforcing bootstrap checks
+ERROR: [1] bootstrap checks failed
+[1]: max size virtual memory [3313172480] for user [es] is too low, increase to [unlimited]
+
+启动的时候：
+ulimit -v unlimited
+
 ```
