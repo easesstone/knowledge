@@ -1,3 +1,4 @@
+```
 curl -XPUT 'ldl:9200/objectinfo?pretty' -H 'Content-Type: application/json' -d'
 {
     "mappings" : {
@@ -13,3 +14,4 @@ curl -XPUT 'ldl:9200/objectinfo?pretty' -H 'Content-Type: application/json' -d'
 
 }
 '
+```
