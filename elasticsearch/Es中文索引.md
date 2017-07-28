@@ -17,45 +17,45 @@ curl -XPUT 'http://ldl:9200/objectinfo?pretty' -d '{
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"idcard" : {
+		"idcard" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"sex" : {
+		"sex" : {
                     "type" : "long"
                 },
-				"reson" : {
+		"reson" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"pkey" : {
+		"pkey" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"tag" : {
+		"tag" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"creator" : {
+		"creator" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"cphone" : {
+		"cphone" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"platformid" : {
+		"platformid" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"feature" : {
+		"feature" : {
                     "type" : "string",
                     "analyzer" : "ik_max_word"
                 },
-				"createtime" : {
+		"createtime" : {
                     "type" : "date"
                 },
-				"updatetime" : {
+		"updatetime" : {
                     "type" : "date"
                 }	
             }
