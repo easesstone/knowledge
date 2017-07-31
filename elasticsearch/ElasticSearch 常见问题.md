@@ -28,11 +28,8 @@ vi /etc/security/limits.conf
 
 添加如下内容:
 *  soft nofile 65536
-
 * hard nofile 131072
-
 * soft nproc 2048
-
 * hard nproc 4096
 备注：* 代表Linux所有用户名称（比如 hadoop）
 
