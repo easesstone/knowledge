@@ -242,7 +242,8 @@ export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.5.1-alpha
 export HADOOP_HOME=/home/hadoop/hadoop-2.7.2
 export SPARK_HOME=/home/spark/spark
 export HBASE_HOME=/home/hbase/hbase
-export PATH=$HBASE_HOME/bin:$SPARK_HOME/bin:$JAVA_HOME/bin:$ZOOKEEPER_HOME/bin   \:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH:/home/ldl/util/
+export PATH=$HBASE_HOME/bin:$SPARK_HOME/bin:$JAVA_HOME/bin:$ZOOKEEPER_HOME/bin
+:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH:/home/ldl/util/
 export HADOOP_CONF_DIR=/home/hadoop/hadoop-2.7.2/etc/hadoop
 export YARN_CONF_DIR=$HADOOP_HOME/etc/Hadoop
 
