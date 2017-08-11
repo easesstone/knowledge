@@ -172,3 +172,102 @@ hadoop-env.sh 中JAVA_HOME 中设置成具体的本地的jdk 安装局对路径�
 在Hadoop 的bin 目录下：hadoop namenode -format
 在Hadoop 的sbin 目录下：start-dfs.sh  && start-yarn.sh 
 ```
+
+## 三，搭建Spark 集群：
+```
+1，下载Spark tar 包，
+例如spark-bin-hadoop2-7.tar.gz 
+注意和Hadoop 的版本对应：
+
+
+2，配置文件：
+如下：spark-env.sh 
+
+export JAVA_HOME=/opt/tool/jdk
+export SCALA_HOME=/opt/tool/scala
+export HADOOP_HOME=/home/hadoop/hadoop-2.7.2
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-2.7.2/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/Hadoop
+export SPARK_MASTER_IP=172.18.18.106
+export SPARK_MASTER_HOST=s106
+export SPARK_LOCAL_IP=172.18.18.106
+export SPARK_WORKER_MEMORY=5g
+export SPARK_WORKER_CORES=2
+export SPARK_HOME=/home/spark/spark
+export SPARK_DIST_CLASSPATH=$(/home/hadoop/hadoop-2.7.2/bin/hadoop classpath)
+
+slaves:
+s110
+s111
+
+3,分发spark 目录：
+
+
+4，到Spark 的sbin 下启动spark集群：
+start-all.sh 
+
+5, 可以看到进程类似如下：
+jps
+---------------------master-------------------
+16866 Worker
+5090 QuorumPeerMain
+15363 ResourceManager
+14964 NameNode
+16650 Master
+15179 SecondaryNameNode
+22235 Jps
+---------------------slave1------------------
+18135 Jps
+13257 DataNode
+3818 QuorumPeerMain
+13371 NodeManager
+14638 Worker
+--------------------slave2--------------------
+13793 DataNode
+13907 NodeManager
+18855 Jps
+15178 Worker
+4059 QuorumPeerMain
+
+```
+
+四，参考说明
+```
+为了方便，一般每台机器上面都配置HADOOP 和Spark 环境变量，参考如下：
+
+alias ...="cd ../.."
+alias ..="cd ../"
+export JAVA_HOME=/opt/tool/jdk
+export ZOOKEEPER_HOME=/usr/local/zookeeper/zookeeper-3.5.1-alpha
+export HADOOP_HOME=/home/hadoop/hadoop-2.7.2
+export SPARK_HOME=/home/spark/spark
+export HBASE_HOME=/home/hbase/hbase
+export PATH=$HBASE_HOME/bin:$SPARK_HOME/bin:$JAVA_HOME/bin:$ZOOKEEPER_HOME/bin   \:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH:/home/ldl/util/
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-2.7.2/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/Hadoop
+
+
+一般的，当spark 版本没有相应的hadoop 的版本tar 包时，可以自己进行编译。
+编译参考官网（下载相应分值） 然后替换相应的jar 包。比如：spark-1.5.1-bin-hadoop2.6.tgz 里面的jar 包
+http://spark.apache.org/docs/latest/building-spark.html
+Specifying the Hadoop Version and Enabling YARN
+You can specify the exact version of Hadoop to compile against 
+through the hadoop.version property. If unset, Spark will build against Hadoop 2.6.X by default.
+
+You can enable the yarn profile and optionally set the yarn.version property 
+if it is different from hadoop.version.
+
+Examples:
+
+# Apache Hadoop 2.6.X
+./build/mvn -Pyarn -DskipTests clean package
+
+# Apache Hadoop 2.7.X and later
+./build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.3 -DskipTests clean package
+
+
+
+
+
+
+```
