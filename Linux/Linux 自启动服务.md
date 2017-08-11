@@ -1,3 +1,4 @@
+方法一：
 ```
 Linux机器重启后首先会去读取/etc/init.d目录下的脚本，所以如果想要某个程序在开机时启动则可以在/etc/ininit.d目录下写个脚本，并且设置一下开机启动服务的顺序就可以了，下面以设置tomcat程序开机自启动为例讲解一下设置过程
 
@@ -62,6 +63,8 @@ chkconfig [--level 1/2/../6] xxxd on/off//设置xxxd用服务在n状态为开/�
 chkconfig --del xxxd //将任务列表中的xxxd服务删除
 
 ```
+
+方法二：
 
 ```
 1、开机自启动tomcat（非root用户）
