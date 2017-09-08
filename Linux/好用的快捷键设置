@@ -1,0 +1,22 @@
+```
+alias ...='cd ../..'
+alias ..='cd ..'
+alias vi='vim'
+export PATH=$PATH:/home/tool/xcall
+
+#!/bin/bash
+if [ $# == 0 ];then 
+echo "xcall  argument[]"
+exit 0
+fi
+command=$@
+echo $command
+{
+	echo "---------------------master-------------------"
+        $command 
+	echo "---------------------slave1------------------"
+	ssh  s115 "source /etc/profile;$command" 
+	echo "--------------------slave2--------------------"
+	ssh s116 "source /etc/profile;$command"  
+}
+```
